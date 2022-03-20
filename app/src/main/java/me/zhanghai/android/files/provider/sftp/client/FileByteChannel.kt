@@ -170,6 +170,7 @@ class FileByteChannel(
             if (!isOpen) {
                 return
             }
+            isOpen = false
             try {
                 file.close()
             } catch (e: SFTPException) {
@@ -182,12 +183,11 @@ class FileByteChannel(
     }
 
     private inner class ReadBuffer {
-        private val bufferSize: Int
+        private val bufferSize: Int = DEFAULT_BUFFER_SIZE
         private val timeout: Long
 
         init {
             val engine = RemoteFileAccessor.getRequester(file)
-            bufferSize = DEFAULT_BUFFER_SIZE
             timeout = engine.timeoutMs.toLong()
         }
 
