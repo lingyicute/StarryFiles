@@ -5,12 +5,10 @@
 
 package me.zhanghai.android.files.filejob
 
-import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.commit
 import me.zhanghai.android.files.app.AppActivity
-import me.zhanghai.android.files.file.FileItem
 import me.zhanghai.android.files.util.args
 import me.zhanghai.android.files.util.putArgs
 
@@ -42,17 +40,5 @@ class FileJobConflictDialogActivity : AppActivity() {
         if (isFinishing) {
             fragment.onFinish()
         }
-    }
-
-    companion object {
-        fun getTitle(sourceFile: FileItem, targetFile: FileItem, context: Context): String =
-            FileJobConflictDialogFragment.getTitle(sourceFile, targetFile, context)
-
-        fun getMessage(
-            sourceFile: FileItem,
-            targetFile: FileItem,
-            type: CopyMoveType,
-            context: Context
-        ): String = FileJobConflictDialogFragment.getMessage(sourceFile, targetFile, type, context)
     }
 }
