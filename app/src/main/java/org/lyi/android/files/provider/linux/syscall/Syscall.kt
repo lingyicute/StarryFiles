@@ -16,7 +16,7 @@ import androidx.annotation.Size
 import org.lyi.android.files.compat.SELinuxCompat
 import org.lyi.android.files.provider.common.ByteString
 import org.lyi.android.files.provider.common.moveToByteString
-import org.lyi.android.libselinux.SeLinux
+import me.zhanghai.android.libselinux.SeLinux
 import java.io.FileDescriptor
 import java.io.InterruptedIOException
 

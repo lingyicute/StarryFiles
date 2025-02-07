@@ -100,7 +100,7 @@
       ~ pressed state, etc. Necessary states will be duplicated manually in the adapter
       ~ implementation.
       -->
-    <org.lyi.android.foregroundcompat.ForegroundImageButton
+    <me.zhanghai.android.foregroundcompat.ForegroundImageButton
         android:id="@+id/menuButton"
         android:layout_width="@dimen/touch_target_size"
         android:layout_height="@dimen/touch_target_size"

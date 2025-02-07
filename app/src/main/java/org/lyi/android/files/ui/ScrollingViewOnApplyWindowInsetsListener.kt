@@ -8,7 +8,7 @@ package org.lyi.android.files.ui
 import android.graphics.Rect
 import android.view.View
 import android.view.WindowInsets
-import org.lyi.android.fastscroll.FastScroller
+import me.zhanghai.android.fastscroll.FastScroller
 
 class ScrollingViewOnApplyWindowInsetsListener(
     view: View,

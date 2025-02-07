@@ -18,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import coil.dispose
 import coil.load
 import java8.nio.file.Path
-import org.lyi.android.fastscroll.PopupTextProvider
+import me.zhanghai.android.fastscroll.PopupTextProvider
 import org.lyi.android.files.R
 import org.lyi.android.files.coil.AppIconPackageName
 import org.lyi.android.files.compat.foregroundCompat

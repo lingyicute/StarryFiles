@@ -9,7 +9,7 @@ import android.system.OsConstants
 import java8.nio.file.FileSystemException
 import java8.nio.file.Path
 import org.lyi.android.files.provider.common.DelegateInputStream
-import org.lyi.android.libarchive.ArchiveException
+import me.zhanghai.android.libarchive.ArchiveException
 import java.io.IOException
 import java.io.InputStream
 import java.io.InterruptedIOException

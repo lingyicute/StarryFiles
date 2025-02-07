@@ -42,7 +42,7 @@ import org.lyi.android.files.util.putState
 import org.lyi.android.files.util.showToast
 import org.lyi.android.files.util.startActivitySafe
 import org.lyi.android.files.util.withChooser
-import org.lyi.android.systemuihelper.SystemUiHelper
+import me.zhanghai.android.systemuihelper.SystemUiHelper
 import java.io.IOException
 
 class ImageViewerFragment : Fragment(), ConfirmDeleteDialogFragment.Listener {

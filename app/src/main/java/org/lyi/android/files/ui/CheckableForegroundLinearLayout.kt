@@ -10,7 +10,7 @@ import android.util.AttributeSet
 import android.widget.Checkable
 import androidx.annotation.AttrRes
 import androidx.annotation.StyleRes
-import org.lyi.android.foregroundcompat.ForegroundLinearLayout
+import me.zhanghai.android.foregroundcompat.ForegroundLinearLayout
 
 class CheckableForegroundLinearLayout : ForegroundLinearLayout, Checkable {
     private var _isChecked = false

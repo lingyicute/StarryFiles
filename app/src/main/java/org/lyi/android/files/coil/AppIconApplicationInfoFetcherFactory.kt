@@ -9,7 +9,7 @@ import android.content.Context
 import android.content.pm.ApplicationInfo
 import coil.key.Keyer
 import coil.request.Options
-import org.lyi.android.appiconloader.AppIconLoader
+import me.zhanghai.android.appiconloader.AppIconLoader
 import org.lyi.android.files.R
 import org.lyi.android.files.compat.longVersionCodeCompat
 import org.lyi.android.files.util.getDimensionPixelSize

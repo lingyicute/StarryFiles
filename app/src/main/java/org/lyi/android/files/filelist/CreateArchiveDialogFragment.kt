@@ -26,7 +26,7 @@ import org.lyi.android.files.util.putArgs
 import org.lyi.android.files.util.setTextWithSelection
 import org.lyi.android.files.util.show
 import org.lyi.android.files.util.takeIfNotEmpty
-import org.lyi.android.libarchive.Archive
+import me.zhanghai.android.libarchive.Archive
 
 class CreateArchiveDialogFragment : FileNameDialogFragment() {
     private val args by args<Args>()
