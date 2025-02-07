@@ -7,7 +7,7 @@
 
 <resources>
 
-    <string name="app_name">Material Files</string>
+    <string name="app_name">StarryFile</string>
 
     <string name="close">閉じる</string>
     <string name="copy">コピー</string>
