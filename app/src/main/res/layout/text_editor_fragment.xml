@@ -52,7 +52,7 @@
             app:drawableTopCompat="@drawable/error_icon_240dp" />
 
         <!-- TODO: Use a WebView for large amount of text. -->
-        <org.lyi.android.fastscroll.FastScrollNestedScrollView
+        <me.zhanghai.android.fastscroll.FastScrollNestedScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -71,6 +71,6 @@
                 android:textAppearance="?textAppearanceListItemSecondary">
                 <requestFocus />
             </org.lyi.android.files.ui.ScrollingChildEditText>
-        </org.lyi.android.fastscroll.FastScrollNestedScrollView>
+        </me.zhanghai.android.fastscroll.FastScrollNestedScrollView>
     </org.lyi.android.files.ui.CoordinatorScrollingFrameLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -5,7 +5,7 @@
   ~ All Rights Reserved.
   -->
 
-<org.lyi.android.foregroundcompat.ForegroundLinearLayout
+<me.zhanghai.android.foregroundcompat.ForegroundLinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/itemLayout"
     android:layout_width="match_parent"
@@ -38,4 +38,4 @@
         android:layout_height="wrap_content"
         android:textAppearance="?textAppearanceListItemSecondary"
         android:textColor="?android:textColorSecondary" />
-</org.lyi.android.foregroundcompat.ForegroundLinearLayout>
+</me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>

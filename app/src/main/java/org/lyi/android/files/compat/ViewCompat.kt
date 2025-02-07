@@ -11,7 +11,7 @@ import android.graphics.drawable.Drawable
 import android.view.View
 import androidx.annotation.IdRes
 import androidx.core.view.ViewCompat
-import org.lyi.android.foregroundcompat.ForegroundCompat
+import me.zhanghai.android.foregroundcompat.ForegroundCompat
 
 @Suppress("UNCHECKED_CAST")
 fun <T : View> View.requireViewByIdCompat(@IdRes id: Int): T =

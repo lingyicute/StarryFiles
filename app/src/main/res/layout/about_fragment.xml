@@ -83,7 +83,7 @@
                                 android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
                         </LinearLayout>
 
-                        <org.lyi.android.foregroundcompat.ForegroundLinearLayout
+                        <me.zhanghai.android.foregroundcompat.ForegroundLinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingStart="?android:listPreferredItemPaddingStart"
@@ -128,9 +128,9 @@
                                     android:text="@string/app_version"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
                             </LinearLayout>
-                        </org.lyi.android.foregroundcompat.ForegroundLinearLayout>
+                        </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
 
-                        <org.lyi.android.foregroundcompat.ForegroundLinearLayout
+                        <me.zhanghai.android.foregroundcompat.ForegroundLinearLayout
                             android:id="@+id/gitHubLayout"
                             android:layout_width="match_parent"
                             android:layout_height="?listPreferredItemHeightSmall"
@@ -155,9 +155,9 @@
                                 android:maxLines="1"
                                 android:text="@string/about_github_title"
                                 android:textAppearance="?textAppearanceListItem" />
-                        </org.lyi.android.foregroundcompat.ForegroundLinearLayout>
+                        </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
 
-                        <org.lyi.android.foregroundcompat.ForegroundLinearLayout
+                        <me.zhanghai.android.foregroundcompat.ForegroundLinearLayout
                             android:id="@+id/licensesLayout"
                             android:layout_width="match_parent"
                             android:layout_height="?listPreferredItemHeightSmall"
@@ -182,9 +182,9 @@
                                 android:maxLines="1"
                                 android:text="@string/about_licenses_title"
                                 android:textAppearance="?textAppearanceListItem" />
-                        </org.lyi.android.foregroundcompat.ForegroundLinearLayout>
+                        </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
 
-                        <org.lyi.android.foregroundcompat.ForegroundLinearLayout
+                        <me.zhanghai.android.foregroundcompat.ForegroundLinearLayout
                             android:id="@+id/privacyPolicyLayout"
                             android:layout_width="match_parent"
                             android:layout_height="?listPreferredItemHeightSmall"
@@ -210,7 +210,7 @@
                                 android:maxLines="1"
                                 android:text="@string/about_privacy_policy_title"
                                 android:textAppearance="?textAppearanceListItem" />
-                        </org.lyi.android.foregroundcompat.ForegroundLinearLayout>
+                        </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -244,7 +244,7 @@
                                 android:textColor="?android:textColorSecondary" />
                         </LinearLayout>
 
-                        <org.lyi.android.foregroundcompat.ForegroundLinearLayout
+                        <me.zhanghai.android.foregroundcompat.ForegroundLinearLayout
                             android:id="@+id/authorNameLayout"
                             android:layout_width="match_parent"
                             android:layout_height="?listPreferredItemHeightSmall"
@@ -271,9 +271,9 @@
                                 android:maxLines="1"
                                 android:text="@string/about_author_name_title"
                                 android:textAppearance="?textAppearanceListItem" />
-                        </org.lyi.android.foregroundcompat.ForegroundLinearLayout>
+                        </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
 
-                        <org.lyi.android.foregroundcompat.ForegroundLinearLayout
+                        <me.zhanghai.android.foregroundcompat.ForegroundLinearLayout
                             android:id="@+id/authorGitHubLayout"
                             android:layout_width="match_parent"
                             android:layout_height="?listPreferredItemHeightSmall"
@@ -298,7 +298,7 @@
                                 android:maxLines="1"
                                 android:text="@string/about_author_github_title"
                                 android:textAppearance="?textAppearanceListItem" />
-                        </org.lyi.android.foregroundcompat.ForegroundLinearLayout>
+                        </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>

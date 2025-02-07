@@ -5,7 +5,7 @@
   ~ All Rights Reserved.
   -->
 
-<org.lyi.android.foregroundcompat.ForegroundLinearLayout
+<me.zhanghai.android.foregroundcompat.ForegroundLinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
@@ -34,4 +34,4 @@
         android:layout_marginStart="-4dp"
         android:duplicateParentState="true"
         android:src="@drawable/arrow_end_icon_white_24dp" />
-</org.lyi.android.foregroundcompat.ForegroundLinearLayout>
+</me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>

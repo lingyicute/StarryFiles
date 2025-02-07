@@ -22,9 +22,9 @@ import org.lyi.android.files.provider.common.PosixFileType
 import org.lyi.android.files.provider.common.PosixGroup
 import org.lyi.android.files.provider.common.PosixUser
 import org.lyi.android.files.provider.common.toByteString
-import org.lyi.android.libarchive.Archive
-import org.lyi.android.libarchive.ArchiveEntry
-import org.lyi.android.libarchive.ArchiveException
+import me.zhanghai.android.libarchive.Archive
+import me.zhanghai.android.libarchive.ArchiveEntry
+import me.zhanghai.android.libarchive.ArchiveException
 
 class ReadArchive : Closeable {
     private val archive = Archive.readNew()

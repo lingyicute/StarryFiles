@@ -14,7 +14,7 @@ import coil.fetch.DrawableResult
 import coil.fetch.FetchResult
 import coil.fetch.Fetcher
 import coil.request.Options
-import org.lyi.android.appiconloader.AppIconLoader
+import me.zhanghai.android.appiconloader.AppIconLoader
 import java.io.Closeable
 
 class AppIconFetcher(

@@ -25,7 +25,7 @@ import org.lyi.android.files.provider.common.ByteStringBuilder
 import org.lyi.android.files.provider.common.ByteStringListPathCreator
 import org.lyi.android.files.provider.common.IsDirectoryException
 import org.lyi.android.files.provider.common.toByteString
-import org.lyi.android.libarchive.ArchiveException
+import me.zhanghai.android.libarchive.ArchiveException
 import java.io.IOException
 import java.io.InputStream
 
