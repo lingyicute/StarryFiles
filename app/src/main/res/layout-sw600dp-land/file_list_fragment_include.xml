@@ -7,7 +7,7 @@
 
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <me.zhanghai.android.files.ui.PersistentBarLayout
+    <org.lyi.android.files.ui.PersistentBarLayout
         android:id="@+id/persistentBarLayout"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
@@ -21,13 +21,13 @@
 
             <include layout="@layout/file_list_fragment_app_bar_include" />
 
-            <me.zhanghai.android.files.ui.PersistentDrawerLayout
+            <org.lyi.android.files.ui.PersistentDrawerLayout
                 android:id="@+id/persistentDrawerLayout"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1">
 
-                <me.zhanghai.android.files.ui.NavigationFrameLayout
+                <org.lyi.android.files.ui.NavigationFrameLayout
                     android:id="@+id/navigationFragment"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
@@ -35,11 +35,11 @@
                     android:background="?colorSurface" />
 
                 <include layout="@layout/file_list_fragment_content_include" />
-            </me.zhanghai.android.files.ui.PersistentDrawerLayout>
+            </org.lyi.android.files.ui.PersistentDrawerLayout>
         </LinearLayout>
 
         <include layout="@layout/file_list_fragment_bottom_bar_include" />
 
         <include layout="@layout/file_list_fragment_speed_dial_include" />
-    </me.zhanghai.android.files.ui.PersistentBarLayout>
+    </org.lyi.android.files.ui.PersistentBarLayout>
 </merge>

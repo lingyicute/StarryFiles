@@ -5,7 +5,7 @@
   ~ All Rights Reserved.
   -->
 
-<me.zhanghai.android.files.ui.CheckableForegroundLinearLayout
+<org.lyi.android.files.ui.CheckableForegroundLinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/itemLayout"
     android:layout_width="match_parent"
@@ -36,7 +36,7 @@
             android:ellipsize="end"
             android:maxLines="1" />
 
-        <me.zhanghai.android.files.ui.AutoGoneTextView
+        <org.lyi.android.files.ui.AutoGoneTextView
             android:id="@+id/subtitleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,4 +44,4 @@
             android:ellipsize="end"
             android:maxLines="1" />
     </LinearLayout>
-</me.zhanghai.android.files.ui.CheckableForegroundLinearLayout>
+</org.lyi.android.files.ui.CheckableForegroundLinearLayout>

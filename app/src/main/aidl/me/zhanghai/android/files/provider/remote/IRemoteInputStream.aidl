@@ -1,6 +1,6 @@
-package me.zhanghai.android.files.provider.remote;
+package org.lyi.android.files.provider.remote;
 
-import me.zhanghai.android.files.provider.remote.ParcelableException;
+import org.lyi.android.files.provider.remote.ParcelableException;
 
 interface IRemoteInputStream {
     int read(out ParcelableException exception);

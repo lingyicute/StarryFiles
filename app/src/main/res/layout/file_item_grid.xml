@@ -5,7 +5,7 @@
   ~ All Rights Reserved.
   -->
 
-<me.zhanghai.android.files.ui.CheckableForegroundLinearLayout
+<org.lyi.android.files.ui.CheckableForegroundLinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/itemLayout"
@@ -15,7 +15,7 @@
     android:gravity="center_vertical"
     android:orientation="vertical">
 
-    <me.zhanghai.android.files.ui.AspectRatioFrameLayout
+    <org.lyi.android.files.ui.AspectRatioFrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/screen_edge_margin"
@@ -24,7 +24,7 @@
         android:duplicateParentState="true"
         app:aspectRatio="1.78">
 
-        <me.zhanghai.android.files.ui.DisabledAlphaImageView
+        <org.lyi.android.files.ui.DisabledAlphaImageView
             android:id="@+id/directoryThumbnailImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -32,7 +32,7 @@
             android:scaleType="fitCenter"
             android:src="@drawable/file_directory_thumbnail" />
 
-        <me.zhanghai.android.files.ui.DisabledAlphaImageView
+        <org.lyi.android.files.ui.DisabledAlphaImageView
             android:id="@+id/thumbnailIconImage"
             android:layout_width="@dimen/large_icon_size"
             android:layout_height="@dimen/large_icon_size"
@@ -44,7 +44,7 @@
           ~ Can't use ShapeableImageView stroke support due to
           ~ https://github.com/material-components/material-components-android/issues/1329
           -->
-        <me.zhanghai.android.files.ui.DisabledAlphaImageView
+        <org.lyi.android.files.ui.DisabledAlphaImageView
             android:id="@+id/thumbnailImage"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -58,7 +58,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/file_item_grid_thumbnail_outline"
             android:duplicateParentState="true" />
-    </me.zhanghai.android.files.ui.AspectRatioFrameLayout>
+    </org.lyi.android.files.ui.AspectRatioFrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -76,7 +76,7 @@
             android:duplicateParentState="true"
             android:padding="@dimen/touch_target_large_icon_padding">
 
-            <me.zhanghai.android.files.ui.DisabledAlphaImageView
+            <org.lyi.android.files.ui.DisabledAlphaImageView
                 android:id="@+id/iconImage"
                 android:layout_width="@dimen/icon_size"
                 android:layout_height="@dimen/icon_size"
@@ -84,7 +84,7 @@
                 android:duplicateParentState="true"
                 android:scaleType="centerCrop" />
 
-            <me.zhanghai.android.files.ui.DisabledAlphaImageView
+            <org.lyi.android.files.ui.DisabledAlphaImageView
                 android:id="@+id/appIconBadgeImage"
                 android:layout_width="@dimen/badge_size_plus_1dp"
                 android:layout_height="@dimen/badge_size_plus_1dp"
@@ -95,7 +95,7 @@
                 android:layout_marginBottom="-0.5dp"
                 android:duplicateParentState="true" />
 
-            <me.zhanghai.android.files.ui.DisabledAlphaImageView
+            <org.lyi.android.files.ui.DisabledAlphaImageView
                 android:id="@+id/badgeImage"
                 android:layout_width="@dimen/badge_size"
                 android:layout_height="@dimen/badge_size"
@@ -103,7 +103,7 @@
                 android:background="@drawable/badge_background_18dp"
                 android:duplicateParentState="true" />
 
-            <me.zhanghai.android.files.ui.DisabledAlphaImageView
+            <org.lyi.android.files.ui.DisabledAlphaImageView
                 android:layout_width="@dimen/badge_size"
                 android:layout_height="@dimen/badge_size"
                 android:layout_gravity="end|bottom"
@@ -127,7 +127,7 @@
           ~ pressed state, etc. Necessary states will be duplicated manually in the adapter
           ~ implementation.
           -->
-        <me.zhanghai.android.foregroundcompat.ForegroundImageButton
+        <org.lyi.android.foregroundcompat.ForegroundImageButton
             android:id="@+id/menuButton"
             android:layout_width="@dimen/touch_target_size"
             android:layout_height="@dimen/touch_target_size"
@@ -138,4 +138,4 @@
             android:src="@drawable/more_vertical_icon_white_24dp"
             app:tint="?colorControlNormal" />
     </LinearLayout>
-</me.zhanghai.android.files.ui.CheckableForegroundLinearLayout>
+</org.lyi.android.files.ui.CheckableForegroundLinearLayout>

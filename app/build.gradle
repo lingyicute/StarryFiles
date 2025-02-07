@@ -25,12 +25,12 @@ apply plugin: 'com.google.firebase.crashlytics'
 //#endif
 
 android {
-    namespace 'me.zhanghai.android.files'
+    namespace 'org.lyi.android.files'
     buildToolsVersion = '35.0.0'
     compileSdk 35
     ndkVersion '27.2.12479018'
     defaultConfig {
-        applicationId 'me.zhanghai.android.files'
+        applicationId 'org.lyi.android.files'
         minSdk 21
         // Not supporting foreground service timeout yet.
         //noinspection OldTargetApi
@@ -191,13 +191,13 @@ dependencies {
     implementation 'io.coil-kt:coil-gif'
     implementation 'io.coil-kt:coil-svg'
     implementation 'io.coil-kt:coil-video'
-    implementation 'me.zhanghai.android.appiconloader:appiconloader:1.5.0'
-    implementation 'me.zhanghai.android.fastscroll:library:1.3.0'
-    implementation 'me.zhanghai.android.foregroundcompat:library:1.0.2'
-    implementation 'me.zhanghai.android.libarchive:library:1.1.4'
-    implementation 'me.zhanghai.android.libselinux:library:2.1.0'
-    implementation 'me.zhanghai.android.retrofile:library:1.2.0'
-    implementation 'me.zhanghai.android.systemuihelper:library:1.0.0'
+    implementation 'org.lyi.android.appiconloader:appiconloader:1.5.0'
+    implementation 'org.lyi.android.fastscroll:library:1.3.0'
+    implementation 'org.lyi.android.foregroundcompat:library:1.0.2'
+    implementation 'org.lyi.android.libarchive:library:1.1.4'
+    implementation 'org.lyi.android.libselinux:library:2.1.0'
+    implementation 'org.lyi.android.retrofile:library:1.2.0'
+    implementation 'org.lyi.android.systemuihelper:library:1.0.0'
     implementation 'org.apache.ftpserver:ftpserver-core:1.2.0'
     // This is a dependency of org.apache.ftpserver:ftpserver-core but org.apache.mina:mina-core
     // 2.1.3+ became incompatible before API 24 due to dependency on StandardSocketOptions

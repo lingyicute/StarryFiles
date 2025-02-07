@@ -174,10 +174,10 @@ cat >>"${CUSTOM_THEMES_NIGHT_XML}" <<EOF
 EOF
 
 cat >"${CUSTOM_THEME_COLOR_KT}" <<EOF
-package me.zhanghai.android.files.theme.custom
+package org.lyi.android.files.theme.custom
 
 import androidx.annotation.ColorRes
-import me.zhanghai.android.files.R
+import org.lyi.android.files.R
 
 enum class ThemeColor(@ColorRes val resourceId: Int) {
 EOF

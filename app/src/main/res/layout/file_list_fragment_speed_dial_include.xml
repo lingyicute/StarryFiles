@@ -24,7 +24,7 @@
         android:elevation="@dimen/sd_open_elevation"
         android:fitsSystemWindows="true">
 
-        <me.zhanghai.android.files.ui.ThemedSpeedDialView
+        <org.lyi.android.files.ui.ThemedSpeedDialView
             android:id="@+id/speedDialView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

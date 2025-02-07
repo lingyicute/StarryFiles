@@ -9,7 +9,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <me.zhanghai.android.files.ui.BottomBarLayout
+    <org.lyi.android.files.ui.BottomBarLayout
         android:id="@+id/bottomBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,5 +39,5 @@
                 android:inputType="text"
                 android:maxLines="1" />
         </androidx.appcompat.widget.Toolbar>
-    </me.zhanghai.android.files.ui.BottomBarLayout>
+    </org.lyi.android.files.ui.BottomBarLayout>
 </merge>

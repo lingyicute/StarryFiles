@@ -5,7 +5,7 @@
   ~ All Rights Reserved.
   -->
 
-<me.zhanghai.android.files.ui.CheckableForegroundLinearLayout
+<org.lyi.android.files.ui.CheckableForegroundLinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/itemLayout"
@@ -25,7 +25,7 @@
         android:duplicateParentState="true"
         android:padding="@dimen/touch_target_large_icon_padding">
 
-        <me.zhanghai.android.files.ui.DisabledAlphaImageView
+        <org.lyi.android.files.ui.DisabledAlphaImageView
             android:id="@+id/iconImage"
             android:layout_width="@dimen/icon_size"
             android:layout_height="@dimen/icon_size"
@@ -33,14 +33,14 @@
             android:duplicateParentState="true"
             android:scaleType="centerCrop" />
 
-        <me.zhanghai.android.files.ui.DisabledAlphaImageView
+        <org.lyi.android.files.ui.DisabledAlphaImageView
             android:id="@+id/thumbnailImage"
             android:layout_width="@dimen/large_icon_size"
             android:layout_height="@dimen/large_icon_size"
             android:duplicateParentState="true"
             android:scaleType="centerCrop" />
 
-        <me.zhanghai.android.files.ui.DisabledAlphaImageView
+        <org.lyi.android.files.ui.DisabledAlphaImageView
             android:id="@+id/appIconBadgeImage"
             android:layout_width="@dimen/badge_size_plus_1dp"
             android:layout_height="@dimen/badge_size_plus_1dp"
@@ -51,7 +51,7 @@
             android:layout_marginBottom="-0.5dp"
             android:duplicateParentState="true" />
 
-        <me.zhanghai.android.files.ui.DisabledAlphaImageView
+        <org.lyi.android.files.ui.DisabledAlphaImageView
             android:id="@+id/badgeImage"
             android:layout_width="@dimen/badge_size"
             android:layout_height="@dimen/badge_size"
@@ -59,7 +59,7 @@
             android:background="@drawable/badge_background_18dp"
             android:duplicateParentState="true" />
 
-        <me.zhanghai.android.files.ui.DisabledAlphaImageView
+        <org.lyi.android.files.ui.DisabledAlphaImageView
             android:layout_width="@dimen/badge_size"
             android:layout_height="@dimen/badge_size"
             android:layout_gravity="end|bottom"
@@ -84,7 +84,7 @@
             android:singleLine="true"
             android:textAppearance="?textAppearanceListItem" />
 
-        <me.zhanghai.android.files.ui.AutoGoneTextView
+        <org.lyi.android.files.ui.AutoGoneTextView
             android:id="@+id/descriptionText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -100,7 +100,7 @@
       ~ pressed state, etc. Necessary states will be duplicated manually in the adapter
       ~ implementation.
       -->
-    <me.zhanghai.android.foregroundcompat.ForegroundImageButton
+    <org.lyi.android.foregroundcompat.ForegroundImageButton
         android:id="@+id/menuButton"
         android:layout_width="@dimen/touch_target_size"
         android:layout_height="@dimen/touch_target_size"
@@ -111,4 +111,4 @@
         android:foreground="@drawable/selectable_item_background_oval"
         android:src="@drawable/more_vertical_icon_white_24dp"
         app:tint="?colorControlNormal" />
-</me.zhanghai.android.files.ui.CheckableForegroundLinearLayout>
+</org.lyi.android.files.ui.CheckableForegroundLinearLayout>

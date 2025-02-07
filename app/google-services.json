@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:728501351509:android:007cb5eb181702a9",
         "android_client_info": {
-          "package_name": "me.zhanghai.android.files"
+          "package_name": "org.lyi.android.files"
         }
       },
       "oauth_client": [

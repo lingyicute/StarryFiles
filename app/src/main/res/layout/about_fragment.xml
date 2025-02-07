@@ -12,7 +12,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <me.zhanghai.android.files.ui.CoordinatorAppBarLayout
+    <org.lyi.android.files.ui.CoordinatorAppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?colorAppBarSurface"
@@ -25,9 +25,9 @@
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             app:popupTheme="?actionBarPopupTheme" />
-    </me.zhanghai.android.files.ui.CoordinatorAppBarLayout>
+    </org.lyi.android.files.ui.CoordinatorAppBarLayout>
 
-    <me.zhanghai.android.files.ui.CoordinatorScrollingFrameLayout
+    <org.lyi.android.files.ui.CoordinatorScrollingFrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -83,7 +83,7 @@
                                 android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
                         </LinearLayout>
 
-                        <me.zhanghai.android.foregroundcompat.ForegroundLinearLayout
+                        <org.lyi.android.foregroundcompat.ForegroundLinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:paddingStart="?android:listPreferredItemPaddingStart"
@@ -128,9 +128,9 @@
                                     android:text="@string/app_version"
                                     android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
                             </LinearLayout>
-                        </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
+                        </org.lyi.android.foregroundcompat.ForegroundLinearLayout>
 
-                        <me.zhanghai.android.foregroundcompat.ForegroundLinearLayout
+                        <org.lyi.android.foregroundcompat.ForegroundLinearLayout
                             android:id="@+id/gitHubLayout"
                             android:layout_width="match_parent"
                             android:layout_height="?listPreferredItemHeightSmall"
@@ -155,9 +155,9 @@
                                 android:maxLines="1"
                                 android:text="@string/about_github_title"
                                 android:textAppearance="?textAppearanceListItem" />
-                        </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
+                        </org.lyi.android.foregroundcompat.ForegroundLinearLayout>
 
-                        <me.zhanghai.android.foregroundcompat.ForegroundLinearLayout
+                        <org.lyi.android.foregroundcompat.ForegroundLinearLayout
                             android:id="@+id/licensesLayout"
                             android:layout_width="match_parent"
                             android:layout_height="?listPreferredItemHeightSmall"
@@ -182,9 +182,9 @@
                                 android:maxLines="1"
                                 android:text="@string/about_licenses_title"
                                 android:textAppearance="?textAppearanceListItem" />
-                        </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
+                        </org.lyi.android.foregroundcompat.ForegroundLinearLayout>
 
-                        <me.zhanghai.android.foregroundcompat.ForegroundLinearLayout
+                        <org.lyi.android.foregroundcompat.ForegroundLinearLayout
                             android:id="@+id/privacyPolicyLayout"
                             android:layout_width="match_parent"
                             android:layout_height="?listPreferredItemHeightSmall"
@@ -210,7 +210,7 @@
                                 android:maxLines="1"
                                 android:text="@string/about_privacy_policy_title"
                                 android:textAppearance="?textAppearanceListItem" />
-                        </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
+                        </org.lyi.android.foregroundcompat.ForegroundLinearLayout>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
@@ -244,7 +244,7 @@
                                 android:textColor="?android:textColorSecondary" />
                         </LinearLayout>
 
-                        <me.zhanghai.android.foregroundcompat.ForegroundLinearLayout
+                        <org.lyi.android.foregroundcompat.ForegroundLinearLayout
                             android:id="@+id/authorNameLayout"
                             android:layout_width="match_parent"
                             android:layout_height="?listPreferredItemHeightSmall"
@@ -271,9 +271,9 @@
                                 android:maxLines="1"
                                 android:text="@string/about_author_name_title"
                                 android:textAppearance="?textAppearanceListItem" />
-                        </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
+                        </org.lyi.android.foregroundcompat.ForegroundLinearLayout>
 
-                        <me.zhanghai.android.foregroundcompat.ForegroundLinearLayout
+                        <org.lyi.android.foregroundcompat.ForegroundLinearLayout
                             android:id="@+id/authorGitHubLayout"
                             android:layout_width="match_parent"
                             android:layout_height="?listPreferredItemHeightSmall"
@@ -298,37 +298,10 @@
                                 android:maxLines="1"
                                 android:text="@string/about_author_github_title"
                                 android:textAppearance="?textAppearanceListItem" />
-                        </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
-
-                        <me.zhanghai.android.foregroundcompat.ForegroundLinearLayout
-                            android:id="@+id/authorTwitterLayout"
-                            android:layout_width="match_parent"
-                            android:layout_height="?listPreferredItemHeightSmall"
-                            android:paddingStart="?android:listPreferredItemPaddingStart"
-                            android:paddingEnd="?android:listPreferredItemPaddingEnd"
-                            android:foreground="?selectableItemBackground"
-                            android:gravity="center_vertical"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="@dimen/icon_size"
-                                android:layout_height="@dimen/icon_size"
-                                android:scaleType="centerCrop"
-                                android:src="@drawable/twitter_icon_white_24dp"
-                                app:tint="?colorControlNormal" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="@dimen/content_start_from_screen_edge_margin_minus_24dp"
-                                android:ellipsize="end"
-                                android:maxLines="1"
-                                android:text="@string/about_author_twitter_title"
-                                android:textAppearance="?textAppearanceListItem" />
-                        </me.zhanghai.android.foregroundcompat.ForegroundLinearLayout>
+                        </org.lyi.android.foregroundcompat.ForegroundLinearLayout>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
-    </me.zhanghai.android.files.ui.CoordinatorScrollingFrameLayout>
+    </org.lyi.android.files.ui.CoordinatorScrollingFrameLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

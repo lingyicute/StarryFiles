@@ -34,7 +34,7 @@
         android:layout_height="match_parent"
         android:visibility="gone" />
 
-    <me.zhanghai.android.files.ui.SaveStateSubsamplingScaleImageView
+    <org.lyi.android.files.ui.SaveStateSubsamplingScaleImageView
         android:id="@+id/largeImage"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

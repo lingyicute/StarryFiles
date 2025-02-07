@@ -10,7 +10,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <me.zhanghai.android.files.ui.CoordinatorScrollingFrameLayout
+    <org.lyi.android.files.ui.CoordinatorScrollingFrameLayout
         android:id="@+id/contentLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -63,5 +63,5 @@
                 android:fitsSystemWindows="true"
                 tools:listitem="@layout/file_item_list" />
         </androidx.swiperefreshlayout.widget.ThemedSwipeRefreshLayout>
-    </me.zhanghai.android.files.ui.CoordinatorScrollingFrameLayout>
+    </org.lyi.android.files.ui.CoordinatorScrollingFrameLayout>
 </merge>

@@ -1,10 +1,10 @@
-package me.zhanghai.android.files.provider.remote;
+package org.lyi.android.files.provider.remote;
 
-import me.zhanghai.android.files.provider.remote.IRemoteFileSystem;
-import me.zhanghai.android.files.provider.remote.IRemoteFileSystemProvider;
-import me.zhanghai.android.files.provider.remote.IRemotePosixFileAttributeView;
-import me.zhanghai.android.files.provider.remote.IRemotePosixFileStore;
-import me.zhanghai.android.files.provider.remote.ParcelableObject;
+import org.lyi.android.files.provider.remote.IRemoteFileSystem;
+import org.lyi.android.files.provider.remote.IRemoteFileSystemProvider;
+import org.lyi.android.files.provider.remote.IRemotePosixFileAttributeView;
+import org.lyi.android.files.provider.remote.IRemotePosixFileStore;
+import org.lyi.android.files.provider.remote.ParcelableObject;
 
 interface IRemoteFileService {
     IRemoteFileSystemProvider getRemoteFileSystemProviderInterface(String scheme);

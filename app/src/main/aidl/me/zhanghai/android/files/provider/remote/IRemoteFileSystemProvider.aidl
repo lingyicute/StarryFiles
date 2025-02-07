@@ -1,16 +1,16 @@
-package me.zhanghai.android.files.provider.remote;
+package org.lyi.android.files.provider.remote;
 
-import me.zhanghai.android.files.provider.remote.ParcelableCopyOptions;
-import me.zhanghai.android.files.provider.remote.ParcelableDirectoryStream;
-import me.zhanghai.android.files.provider.remote.ParcelableException;
-import me.zhanghai.android.files.provider.remote.ParcelableFileAttributes;
-import me.zhanghai.android.files.provider.remote.ParcelableObject;
-import me.zhanghai.android.files.provider.remote.ParcelablePathListConsumer;
-import me.zhanghai.android.files.provider.remote.ParcelableSerializable;
-import me.zhanghai.android.files.provider.remote.RemotePathObservable;
-import me.zhanghai.android.files.provider.remote.RemoteInputStream;
-import me.zhanghai.android.files.provider.remote.RemoteSeekableByteChannel;
-import me.zhanghai.android.files.util.RemoteCallback;
+import org.lyi.android.files.provider.remote.ParcelableCopyOptions;
+import org.lyi.android.files.provider.remote.ParcelableDirectoryStream;
+import org.lyi.android.files.provider.remote.ParcelableException;
+import org.lyi.android.files.provider.remote.ParcelableFileAttributes;
+import org.lyi.android.files.provider.remote.ParcelableObject;
+import org.lyi.android.files.provider.remote.ParcelablePathListConsumer;
+import org.lyi.android.files.provider.remote.ParcelableSerializable;
+import org.lyi.android.files.provider.remote.RemotePathObservable;
+import org.lyi.android.files.provider.remote.RemoteInputStream;
+import org.lyi.android.files.provider.remote.RemoteSeekableByteChannel;
+import org.lyi.android.files.util.RemoteCallback;
 
 interface IRemoteFileSystemProvider {
     RemoteInputStream newInputStream(

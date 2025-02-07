@@ -1,11 +1,11 @@
-package me.zhanghai.android.files.provider.remote;
+package org.lyi.android.files.provider.remote;
 
-import me.zhanghai.android.files.provider.common.ParcelableFileTime;
-import me.zhanghai.android.files.provider.common.ParcelablePosixFileMode;
-import me.zhanghai.android.files.provider.common.PosixGroup;
-import me.zhanghai.android.files.provider.common.PosixUser;
-import me.zhanghai.android.files.provider.remote.ParcelableException;
-import me.zhanghai.android.files.provider.remote.ParcelableObject;
+import org.lyi.android.files.provider.common.ParcelableFileTime;
+import org.lyi.android.files.provider.common.ParcelablePosixFileMode;
+import org.lyi.android.files.provider.common.PosixGroup;
+import org.lyi.android.files.provider.common.PosixUser;
+import org.lyi.android.files.provider.remote.ParcelableException;
+import org.lyi.android.files.provider.remote.ParcelableObject;
 
 interface IRemotePosixFileAttributeView {
     ParcelableObject readAttributes(out ParcelableException exception);

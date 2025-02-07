@@ -16,7 +16,7 @@
         android:icon="@drawable/search_icon_control_normal_24dp"
         android:orderInCategory="100"
         android:title="@string/search"
-        app:actionViewClass="me.zhanghai.android.files.ui.FixQueryChangeSearchView"
+        app:actionViewClass="org.lyi.android.files.ui.FixQueryChangeSearchView"
         app:showAsAction="always|collapseActionView" />
 
     <item
