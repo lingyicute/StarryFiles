@@ -16,8 +16,8 @@
         android:shortcutShortLabel="@string/shortcut_downloads_title">
 
         <intent
-            android:action="me.zhanghai.android.files.intent.action.VIEW_DOWNLOADS"
-            android:targetPackage="me.zhanghai.android.files" />
+            android:action="org.lyi.android.files.intent.action.VIEW_DOWNLOADS"
+            android:targetPackage="org.lyi.android.files" />
     </shortcut>
 
     <shortcut
@@ -26,7 +26,7 @@
         android:shortcutShortLabel="@string/shortcut_ftp_server_title">
 
         <intent
-            android:action="me.zhanghai.android.files.intent.action.MANAGE_FTP_SERVER"
-            android:targetPackage="me.zhanghai.android.files" />
+            android:action="org.lyi.android.files.intent.action.MANAGE_FTP_SERVER"
+            android:targetPackage="org.lyi.android.files" />
     </shortcut>
 </shortcuts>

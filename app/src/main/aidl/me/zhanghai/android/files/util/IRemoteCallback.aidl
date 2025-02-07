@@ -1,4 +1,4 @@
-package me.zhanghai.android.files.util;
+package org.lyi.android.files.util;
 
 import android.os.Bundle;
 

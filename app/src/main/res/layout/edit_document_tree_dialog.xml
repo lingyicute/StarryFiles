@@ -42,32 +42,32 @@
                 </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <me.zhanghai.android.files.ui.ReadOnlyTextInputLayout
+            <org.lyi.android.files.ui.ReadOnlyTextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="@string/storage_edit_document_tree_uri">
 
-                <me.zhanghai.android.files.ui.ReadOnlyTextInputEditText
+                <org.lyi.android.files.ui.ReadOnlyTextInputEditText
                     android:id="@+id/uriText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textIsSelectable="true" />
-            </me.zhanghai.android.files.ui.ReadOnlyTextInputLayout>
+            </org.lyi.android.files.ui.ReadOnlyTextInputLayout>
 
-            <me.zhanghai.android.files.ui.ReadOnlyTextInputLayout
+            <org.lyi.android.files.ui.ReadOnlyTextInputLayout
                 android:id="@+id/pathLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="@string/storage_edit_document_tree_path">
 
-                <me.zhanghai.android.files.ui.ReadOnlyTextInputEditText
+                <org.lyi.android.files.ui.ReadOnlyTextInputEditText
                     android:id="@+id/pathText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textIsSelectable="true" />
-            </me.zhanghai.android.files.ui.ReadOnlyTextInputLayout>
+            </org.lyi.android.files.ui.ReadOnlyTextInputLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </FrameLayout>

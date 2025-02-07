@@ -42,17 +42,17 @@
                 </com.google.android.material.textfield.TextInputEditText>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <me.zhanghai.android.files.ui.ReadOnlyTextInputLayout
+            <org.lyi.android.files.ui.ReadOnlyTextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="@string/navigation_edit_bookmark_directory_path">
 
-                <me.zhanghai.android.files.ui.ReadOnlyTextInputEditText
+                <org.lyi.android.files.ui.ReadOnlyTextInputEditText
                     android:id="@+id/pathText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
-            </me.zhanghai.android.files.ui.ReadOnlyTextInputLayout>
+            </org.lyi.android.files.ui.ReadOnlyTextInputLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </FrameLayout>

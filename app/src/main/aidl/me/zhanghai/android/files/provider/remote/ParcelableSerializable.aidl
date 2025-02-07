@@ -1,3 +1,3 @@
-package me.zhanghai.android.files.provider.remote;
+package org.lyi.android.files.provider.remote;
 
 parcelable ParcelableSerializable;

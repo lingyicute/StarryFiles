@@ -1,3 +1,3 @@
-package me.zhanghai.android.files.provider.common;
+package org.lyi.android.files.provider.common;
 
 parcelable ParcelableFileTime;

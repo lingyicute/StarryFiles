@@ -12,7 +12,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <me.zhanghai.android.files.ui.CoordinatorAppBarLayout
+    <org.lyi.android.files.ui.CoordinatorAppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?colorAppBarSurface"
@@ -25,9 +25,9 @@
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             app:popupTheme="?actionBarPopupTheme" />
-    </me.zhanghai.android.files.ui.CoordinatorAppBarLayout>
+    </org.lyi.android.files.ui.CoordinatorAppBarLayout>
 
-    <me.zhanghai.android.files.ui.CoordinatorScrollingLinearLayout
+    <org.lyi.android.files.ui.CoordinatorScrollingLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -250,5 +250,5 @@
                 android:text="@string/save"
                 style="?buttonBarButtonStyle" />
         </LinearLayout>
-    </me.zhanghai.android.files.ui.CoordinatorScrollingLinearLayout>
+    </org.lyi.android.files.ui.CoordinatorScrollingLinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

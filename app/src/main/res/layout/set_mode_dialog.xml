@@ -26,72 +26,72 @@
             android:clipToPadding="false"
             android:orientation="vertical">
 
-            <me.zhanghai.android.files.ui.ReadOnlyTextInputLayout
+            <org.lyi.android.files.ui.ReadOnlyTextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/file_properties_permission_owner">
 
-                <me.zhanghai.android.files.ui.ReadOnlyTextInputEditText
+                <org.lyi.android.files.ui.ReadOnlyTextInputEditText
                     android:id="@+id/ownerText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-                <me.zhanghai.android.files.ui.DropDownView
+                <org.lyi.android.files.ui.DropDownView
                     android:id="@+id/ownerDropDown"
                     android:layout_width="match_parent"
                     android:layout_height="0dp" />
-            </me.zhanghai.android.files.ui.ReadOnlyTextInputLayout>
+            </org.lyi.android.files.ui.ReadOnlyTextInputLayout>
 
-            <me.zhanghai.android.files.ui.ReadOnlyTextInputLayout
+            <org.lyi.android.files.ui.ReadOnlyTextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="@string/file_properties_permission_group">
 
-                <me.zhanghai.android.files.ui.ReadOnlyTextInputEditText
+                <org.lyi.android.files.ui.ReadOnlyTextInputEditText
                     android:id="@+id/groupText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-                <me.zhanghai.android.files.ui.DropDownView
+                <org.lyi.android.files.ui.DropDownView
                     android:id="@+id/groupDropDown"
                     android:layout_width="match_parent"
                     android:layout_height="0dp" />
-            </me.zhanghai.android.files.ui.ReadOnlyTextInputLayout>
+            </org.lyi.android.files.ui.ReadOnlyTextInputLayout>
 
-            <me.zhanghai.android.files.ui.ReadOnlyTextInputLayout
+            <org.lyi.android.files.ui.ReadOnlyTextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="@string/file_properties_permission_set_mode_others">
 
-                <me.zhanghai.android.files.ui.ReadOnlyTextInputEditText
+                <org.lyi.android.files.ui.ReadOnlyTextInputEditText
                     android:id="@+id/othersText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-                <me.zhanghai.android.files.ui.DropDownView
+                <org.lyi.android.files.ui.DropDownView
                     android:id="@+id/othersDropDown"
                     android:layout_width="match_parent"
                     android:layout_height="0dp" />
-            </me.zhanghai.android.files.ui.ReadOnlyTextInputLayout>
+            </org.lyi.android.files.ui.ReadOnlyTextInputLayout>
 
-            <me.zhanghai.android.files.ui.ReadOnlyTextInputLayout
+            <org.lyi.android.files.ui.ReadOnlyTextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:hint="@string/file_properties_permission_set_mode_special">
 
-                <me.zhanghai.android.files.ui.ReadOnlyTextInputEditText
+                <org.lyi.android.files.ui.ReadOnlyTextInputEditText
                     android:id="@+id/specialText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
 
-                <me.zhanghai.android.files.ui.DropDownView
+                <org.lyi.android.files.ui.DropDownView
                     android:id="@+id/specialDropDown"
                     android:layout_width="match_parent"
                     android:layout_height="0dp" />
-            </me.zhanghai.android.files.ui.ReadOnlyTextInputLayout>
+            </org.lyi.android.files.ui.ReadOnlyTextInputLayout>
 
             <CheckBox
                 android:id="@+id/recursiveCheck"

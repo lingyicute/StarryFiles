@@ -12,7 +12,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <me.zhanghai.android.files.ui.CoordinatorAppBarLayout
+    <org.lyi.android.files.ui.CoordinatorAppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?colorAppBarSurface"
@@ -25,9 +25,9 @@
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
             app:popupTheme="?actionBarPopupTheme" />
-    </me.zhanghai.android.files.ui.CoordinatorAppBarLayout>
+    </org.lyi.android.files.ui.CoordinatorAppBarLayout>
 
-    <me.zhanghai.android.files.ui.CoordinatorScrollingFrameLayout
+    <org.lyi.android.files.ui.CoordinatorScrollingFrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -52,14 +52,14 @@
             app:drawableTopCompat="@drawable/error_icon_240dp" />
 
         <!-- TODO: Use a WebView for large amount of text. -->
-        <me.zhanghai.android.fastscroll.FastScrollNestedScrollView
+        <org.lyi.android.fastscroll.FastScrollNestedScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
             android:fillViewport="true">
 
-            <me.zhanghai.android.files.ui.ScrollingChildEditText
+            <org.lyi.android.files.ui.ScrollingChildEditText
                 android:id="@+id/textEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
                 android:inputType="textMultiLine"
                 android:textAppearance="?textAppearanceListItemSecondary">
                 <requestFocus />
-            </me.zhanghai.android.files.ui.ScrollingChildEditText>
-        </me.zhanghai.android.fastscroll.FastScrollNestedScrollView>
-    </me.zhanghai.android.files.ui.CoordinatorScrollingFrameLayout>
+            </org.lyi.android.files.ui.ScrollingChildEditText>
+        </org.lyi.android.fastscroll.FastScrollNestedScrollView>
+    </org.lyi.android.files.ui.CoordinatorScrollingFrameLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
