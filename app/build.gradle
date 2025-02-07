@@ -7,9 +7,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
 
-apply from: '../signing.gradle'
-
-
 android {
     namespace 'org.lyi.android.files'
     buildToolsVersion = '35.0.0'
@@ -64,7 +61,7 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+            signingConfig signingConfigs.debug
         }
     }
     packagingOptions {
