@@ -76,7 +76,7 @@ THEME_SUFFIXES=(
 )
 CUSTOM_THEMES_XML='../app/src/main/res/values/themes_custom.xml'
 CUSTOM_THEMES_NIGHT_XML='../app/src/main/res/values-night/themes_custom.xml'
-CUSTOM_THEME_COLOR_KT='../app/src/main/java/me/zhanghai/android/files/theme/custom/ThemeColor.kt'
+CUSTOM_THEME_COLOR_KT='../app/src/main/java/org/lyi/android/files/theme/custom/ThemeColor.kt'
 
 cat >"${CUSTOM_COLORS_XML}" <<EOF
 <?xml version="1.0" encoding="utf-8"?>
