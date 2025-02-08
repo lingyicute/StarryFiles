@@ -56,7 +56,7 @@
         <item quantity="other">%1$,d 字节</item>
     </plurals>
 
-    <string name="all_files_access_rationale_message">应用需要管理所有文件的权限。请在接下来的系统设置中授予权限。</string>
+    <string name="all_files_access_rationale_message">作为一个文件管理器，StarryFiles 需要管理所有文件的权限。请在系统设置中授予此权限。</string>
     <string name="storage_permission_rationale_message">应用需要访问文件的权限。请在接下来的系统对话框中点击“允许”。</string>
     <string name="storage_permission_permanently_denied_message">应用需要访问文件的权限。请在系统设置中授予“存储空间”权限。</string>
     <string name="notification_permission_rationale_message">应用需要发布文件操作相关通知的权限。请在接下来的系统对话框中点击“允许”。</string>
@@ -390,7 +390,7 @@
     <plurals name="file_properties_apk_requested_permissions_positive_format">
         <item quantity="other">已请求 %1$,d 项权限</item>
     </plurals>
-    <string name="file_properties_apk_signature_digests">签名</string>
+    <string name="file_properties_apk_signature_digests">签名 SHA1 校验值</string>
     <string name="file_properties_apk_signature_digests_empty">无有效签名</string>
     <string name="file_properties_apk_past_signature_digests">旧签名</string>
     <string name="file_properties_checksum">校验和</string>
@@ -636,11 +636,11 @@
 
     <string name="about_title">关于</string>
     <string name="about_version_title">版本</string>
-    <string name="about_github_title">在 GitHub 上查看</string>
+    <string name="about_github_title">GitHub 上的源代码</string>
     <string name="about_licenses_title">许可证</string>
     <string name="about_privacy_policy_title">隐私权政策</string>
-    <string name="about_author_title">作者</string>
-    <string name="about_author_name_title">张海</string>
-    <string name="about_author_github_title">在 GitHub 上关注</string>
-    <string name="about_author_twitter_title">在 Twitter 上关注</string>
+    <string name="about_author_title">星愿梨</string>
+    <string name="about_author_name_title">主页</string>
+    <string name="about_author_github_title">GitHub</string>
+    <string name="about_author_twitter_title">Twitter</string>
 </resources>
