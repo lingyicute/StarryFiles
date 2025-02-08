@@ -9,7 +9,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="ImpliedQuantity,MissingQuantity">
 
-    <string name="app_name">StarryFile</string>
+    <string name="app_name">StarryFiles</string>
 
     <string name="close">Fermer</string>
     <string name="copy">Copier</string>

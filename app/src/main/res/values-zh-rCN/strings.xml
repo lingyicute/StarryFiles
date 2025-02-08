@@ -7,7 +7,7 @@
 
 <resources>
 
-    <string name="app_name">质感文件</string>
+    <string name="app_name">StarryFiles</string>
 
     <string name="close">关闭</string>
     <string name="copy">复制</string>
@@ -589,7 +589,7 @@
     <string name="settings_locale_title">语言</string>
     <string name="settings_theme_color_title">主题色</string>
     <string name="settings_theme_color_summary">应用中最常见的颜色</string>
-    <string name="settings_material_design_3_title">质感设计 3</string>
+    <string name="settings_material_design_3_title">Material You</string>
     <string name="settings_night_mode_title">夜间模式</string>
     <string-array name="settings_night_mode_entries">
         <item>跟随系统</item>
