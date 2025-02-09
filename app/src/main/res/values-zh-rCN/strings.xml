@@ -598,7 +598,7 @@
         <item>基于时间</item>
         <item>基于省电模式</item>
     </string-array>
-    <string name="settings_black_night_mode">黑色夜间模式</string>
+    <string name="settings_black_night_mode">深邃黑</string>
     <string name="settings_file_list_animation_title">文件列表动画</string>
     <string name="settings_file_name_ellipsize_title">显示长文件名</string>
     <string-array name="settings_file_name_ellipsize_entries">
@@ -636,7 +636,7 @@
 
     <string name="about_title">关于</string>
     <string name="about_version_title">版本</string>
-    <string name="about_github_title">GitHub 上的源代码</string>
+    <string name="about_github_title">源代码</string>
     <string name="about_licenses_title">许可证</string>
     <string name="about_privacy_policy_title">隐私权政策</string>
     <string name="about_author_title">星愿梨</string>

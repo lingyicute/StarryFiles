@@ -144,7 +144,7 @@
                                 android:layout_width="@dimen/icon_size"
                                 android:layout_height="@dimen/icon_size"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/github_icon_white_24dp"
+                                android:src="@drawable/code"
                                 app:tint="?colorControlNormal" />
 
                             <TextView
