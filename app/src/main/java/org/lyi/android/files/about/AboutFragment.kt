@@ -37,7 +37,6 @@ class AboutFragment : Fragment() {
         activity.setSupportActionBar(binding.toolbar)
         activity.supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         binding.gitHubLayout.setOnClickListener { startActivitySafe(GITHUB_URI.createViewIntent()) }
-        binding.licensesLayout.setOnClickListener { LicensesDialogFragment.show(this) }
         binding.authorNameLayout.setOnClickListener {
             startActivitySafe(AUTHOR_RESUME_URI.createViewIntent())
         }
@@ -48,8 +47,6 @@ class AboutFragment : Fragment() {
 
     companion object {
         private val GITHUB_URI = Uri.parse("https://github.com/lingyicute/StarryFiles")
-        private val PRIVACY_POLICY_URI =
-            Uri.parse("https://github.com/lingyicute/StarryFiles/blob/master/PRIVACY.md")
         private val AUTHOR_RESUME_URI = Uri.parse("https://92li.us.kg")
         private val AUTHOR_GITHUB_URI = Uri.parse("https://github.com/lingyicute")
     }
