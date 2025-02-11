@@ -20,6 +20,7 @@ class ShowRequestNotificationPermissionRationaleDialogFragment : AppCompatDialog
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return MaterialAlertDialogBuilder(requireContext(), theme)
+            .setTitle(R.string.lyi_request_permission_title)
             .setMessage(R.string.notification_permission_rationale_message)
             .setPositiveButton(android.R.string.ok) { _, _ ->
                 listener.onShowRequestNotificationPermissionRationaleResult(true)

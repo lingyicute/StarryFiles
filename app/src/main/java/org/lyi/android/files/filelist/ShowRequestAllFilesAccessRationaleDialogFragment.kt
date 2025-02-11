@@ -20,6 +20,7 @@ class ShowRequestAllFilesAccessRationaleDialogFragment : AppCompatDialogFragment
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return MaterialAlertDialogBuilder(requireContext(), theme)
+            .setTitle(R.string.lyi_request_permission_title)
             .setMessage(R.string.all_files_access_rationale_message)
             .setPositiveButton(android.R.string.ok) { _, _ ->
                 listener.onShowRequestAllFilesAccessRationaleResult(true)

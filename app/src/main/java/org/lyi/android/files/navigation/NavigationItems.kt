@@ -276,7 +276,8 @@ private val DEFAULT_STANDARD_DIRECTORIES = listOf(
     ),
     StandardDirectory(
         R.drawable.document_icon_white_24dp, R.string.navigation_standard_directory_documents,
-        Environment.DIRECTORY_DOCUMENTS, false),
+        Environment.DIRECTORY_DOCUMENTS, false
+    ),
     StandardDirectory(
         R.drawable.download_icon_white_24dp, R.string.navigation_standard_directory_downloads,
         Environment.DIRECTORY_DOWNLOADS, true
