@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!--
-  ~ Copyright (c) 2018 Hai Zhang <dreaming.in.code.zh@gmail.com>
+  ~ Copyright (c) 2025 lingyicute <dreaming.in.code.zh@gmail.com>
   ~ All Rights Reserved.
   -->
 
@@ -533,7 +533,7 @@
     <string name="about_licenses_title">Giấy phép</string>
     <string name="about_privacy_policy_title">Chính sách riêng tư</string>
     <string name="about_author_title">Tác giả</string>
-    <string name="about_author_name_title">Hai Zhang</string>
+    <string name="about_author_name_title">lingyicute</string>
     <string name="about_author_github_title">Theo dõi trên GitHub</string>
     <string name="about_author_twitter_title">Theo dõi trên Twitter</string>
 </resources>
