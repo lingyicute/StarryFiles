@@ -1,2 +1,0 @@
-- Added Czech and Hebrew translations.
-- Other bug fixes and improvements.
