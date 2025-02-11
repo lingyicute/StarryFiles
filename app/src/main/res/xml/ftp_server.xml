@@ -19,6 +19,7 @@
 
     <org.lyi.android.files.ftpserver.FtpServerAddTilePreference
         android:title="@string/ftp_server_add_tile_title"
+        android:summary="@string/ftp_server_add_tile_summary"
         app:isPreferenceVisible="@bool/pref_visible_ftp_server_add_tile" />
 
     <PreferenceCategory
