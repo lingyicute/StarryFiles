@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 Hai Zhang <dreaming.in.code.zh@gmail.com>
+ * Copyright (c) 2025 lingyicute <dreaming.in.code.zh@gmail.com>
  * All Rights Reserved.
  */
 
