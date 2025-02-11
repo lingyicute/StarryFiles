@@ -199,7 +199,7 @@
     <string name="file_job_remount_success_format">「%1$s」已被重新掛接為讀寫模式</string>
     <string name="file_job_action_all">套用此操作到所有檔案</string>
 
-    <string name="file_open_apk_message">這個檔案是一個 Android 套件。您想要安裝它，還是查看它的內容？</string>
+    <string name="file_open_apk_message">這個檔案是一個 Android 套件。你想要安裝它，還是查看它的內容？</string>
     <string name="file_open_as_title">開啟為…</string>
     <string name="file_open_as_title_format">將「%1$s」開啟為</string>
     <string name="file_open_as_type_text">文字</string>
@@ -264,7 +264,7 @@
     <string name="file_list_action_sort_directories_first">資料夾優先</string>
     <string name="file_list_action_view_sort_path_specific">僅用於此資料夾</string>
     <string name="file_list_action_new_task">新視窗</string>
-    <string name="file_list_action_navigate_up">向上</string>
+    <string name="file_list_action_navigate_up">回退</string>
     <string name="file_list_action_navigate_to">移至</string>
     <string name="file_list_action_show_hidden_files">顯示隱藏檔案</string>
     <string name="file_list_action_copy_path">複製路徑</string>
@@ -558,9 +558,9 @@
     <string name="text_editor_title_format">%1$s</string>
     <string name="text_editor_title_changed_format">*%1$s</string>
     <string name="text_editor_save_success">已儲存</string>
-    <string name="text_editor_reload_message">您確定要重新載入嗎？對此文件未儲存的變更將丟失。</string>
+    <string name="text_editor_reload_message">你確定要重新載入嗎？對此文件未儲存的變更將丟失。</string>
     <string name="text_editor_encoding">編碼</string>
-    <string name="text_editor_close_message">您確定要捨棄對此文件未儲存的變更嗎？</string>
+    <string name="text_editor_close_message">你確定要捨棄對此文件未儲存的變更嗎？</string>
 
     <string name="ftp_server_title">FTP 伺服器</string>
     <string name="ftp_server_state_title">狀態</string>
@@ -621,7 +621,7 @@
         <item>僅 root 存取</item>
     </string-array>
     <plurals name="settings_root_strategy_message_format">
-        <item quantity="other">您有 %1$,d 個正在執行的檔案作業，因此現在變更 root 存取模式可能會導致未預期的錯誤。您確定要現在變更它嗎？</item>
+        <item quantity="other">你有 %1$,d 個正在執行的檔案作業，因此現在變更 root 存取模式可能會導致未預期的錯誤。你確定要現在變更它嗎？</item>
     </plurals>
     <string name="settings_archive_file_name_encoding_title">封存檔名稱編碼</string>
     <string name="settings_open_apk_default_action_title">開啟 Android 套件</string>
