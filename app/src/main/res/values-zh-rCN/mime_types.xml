@@ -8,7 +8,7 @@
 <resources>
     <string name="file_type_name_unknown">文件</string>
     <string name="file_type_name_apk">Android 安装包</string>
-    <string name="file_type_name_archive">%1$s 归档文件</string>
+    <string name="file_type_name_archive">%1$s 压缩包</string>
     <string name="file_type_name_audio">%1$s 音频</string>
     <string name="file_type_name_calendar">%1$s 日历</string>
     <string name="file_type_name_certificate">%1$s 证书</string>

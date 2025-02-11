@@ -802,5 +802,6 @@
     <string name="shortcut_ftp_server_title" translatable="false">@string/ftp_server_title</string>
 
     <string name="lyi_request_permission_title">权限请求</string>
-
+    <string name="ftp_server_add_tile_summary">在下拉状态栏里创建一个快捷方式（国内魔改 UI 可能会破坏此功能）</string>
+    
 </resources>
