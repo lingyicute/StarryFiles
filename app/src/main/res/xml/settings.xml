@@ -37,6 +37,7 @@
 
         <SwitchPreferenceCompat
             android:key="@string/pref_key_black_night_mode"
+            android:summary="@string/black_lyi_summary"
             android:title="@string/settings_black_night_mode"
             android:defaultValue="@bool/pref_default_value_black_night_mode" />
 
@@ -104,6 +105,7 @@
 
         <SwitchPreferenceCompat
             android:key="@string/pref_key_read_remote_files_for_thumbnail"
+            android:summary="@string/lyi_thumbnail_summary"
             android:title="@string/settings_read_remote_files_for_thumbnail_title"
             android:defaultValue="@bool/pref_default_value_read_remote_files_for_thumbnail" />
     </PreferenceCategory>

@@ -572,7 +572,7 @@
     <string name="ftp_server_url_summary_no_local_inet_address">本地 IP 地址未知</string>
     <string name="ftp_server_url_menu_copy_url">复制地址</string>
     <string name="ftp_server_url_menu_copy_password">复制密码</string>
-    <string name="ftp_server_add_tile_title">创建快捷方式</string>
+    <string name="ftp_server_add_tile_title">添加快捷方式</string>
     <string name="ftp_server_add_tile_result_added">添加成功</string>
     <string name="ftp_server_add_tile_result_already_added">已经添加过啦</string>
     <string name="ftp_server_add_tile_result_error">尝试添加快捷方式时发生错误</string>
@@ -589,7 +589,7 @@
     <string name="settings_locale_title">语言</string>
     <string name="settings_theme_color_title">主题色</string>
     <string name="settings_material_design_3_title">Material You</string>
-    <string name="settings_night_mode_title">夜间模式</string>
+    <string name="settings_night_mode_title">深色主题</string>
     <string-array name="settings_night_mode_entries">
         <item>跟随系统</item>
         <item>关闭</item>
@@ -631,7 +631,7 @@
     </string-array>
     <string name="settings_show_pdf_thumbnail_pre_28_title">显示 PDF 文档缩略图</string>
     <string name="settings_show_pdf_thumbnail_pre_28_summary">可能导致应用在旧版 Android 上不稳定</string>
-    <string name="settings_read_remote_files_for_thumbnail_title">读取远程文件以显示缩略图</string>
+    <string name="settings_read_remote_files_for_thumbnail_title">为远程文件加载缩略图</string>
 
     <string name="about_title">关于</string>
     <string name="about_version_title">版本</string>
