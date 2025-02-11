@@ -6,4 +6,4 @@ Only the latest version of this app is currently being supported with security u
 
 ## Reporting a Vulnerability
 
-Please email dreaming.in.code.zh@gmail.com to report a vulnerability.
+Please email li@92li.us.kg to report a vulnerability.
