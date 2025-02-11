@@ -70,7 +70,7 @@
     <string name="notification_channel_ftp_server_description">显示和控制 FTP 服务器</string>
 
     <string name="file_action_archive_password_title">需要密码</string>
-    <string name="file_action_archive_password_message_format">“%1$s”受密码保护。</string>
+    <string name="file_action_archive_password_message_format">“%1$s”已加密。</string>
     <string name="file_action_archive_password_error_empty">密码不能为空</string>
 
     <plurals name="file_job_archive_scan_notification_title_format">
@@ -199,7 +199,7 @@
     <string name="file_job_remount_success_format">“%1$s”已被重新挂载为读写模式</string>
     <string name="file_job_action_all">应用此操作到所有文件</string>
 
-    <string name="file_open_apk_message">这个文件是一个 Android 安装包。您想要安装它，还是查看它的内容？</string>
+    <string name="file_open_apk_message">这个文件是一个 Android 安装包。你想要安装它，还是查看它的内容？</string>
     <string name="file_open_as_title">打开为…</string>
     <string name="file_open_as_title_format">将“%1$s”打开为</string>
     <string name="file_open_as_type_text">文本</string>
@@ -236,7 +236,7 @@
     <string name="file_create_file_title">新建文件</string>
     <string name="file_create_directory_title">新建文件夹</string>
 
-    <string name="file_list_title">文件</string>
+    <string name="file_list_title">StarryFiles</string>
     <plurals name="file_list_title_open_file">
         <item quantity="other">选择文件</item>
     </plurals>
@@ -264,7 +264,7 @@
     <string name="file_list_action_sort_directories_first">文件夹优先</string>
     <string name="file_list_action_view_sort_path_specific">仅用于此文件夹</string>
     <string name="file_list_action_new_task">新建窗口</string>
-    <string name="file_list_action_navigate_up">向上</string>
+    <string name="file_list_action_navigate_up">回退</string>
     <string name="file_list_action_navigate_to">转到</string>
     <string name="file_list_action_show_hidden_files">显示隐藏文件</string>
     <string name="file_list_action_copy_path">复制路径</string>
@@ -558,9 +558,9 @@
     <string name="text_editor_title_format">%1$s</string>
     <string name="text_editor_title_changed_format">*%1$s</string>
     <string name="text_editor_save_success">已保存</string>
-    <string name="text_editor_reload_message">您确定要重新加载吗？对此文档未保存的更改将丢失。</string>
+    <string name="text_editor_reload_message">你确定要重新加载吗？对此文档未保存的更改将丢失。</string>
     <string name="text_editor_encoding">编码</string>
-    <string name="text_editor_close_message">您确定要舍弃对此文档未保存的更改吗？</string>
+    <string name="text_editor_close_message">你确定要舍弃对此文档未保存的更改吗？</string>
 
     <string name="ftp_server_title">FTP 服务器</string>
     <string name="ftp_server_state_title">状态</string>
@@ -620,7 +620,7 @@
         <item>仅使用 root 权限访问</item>
     </string-array>
     <plurals name="settings_root_strategy_message_format">
-        <item quantity="other">您有 %1$,d 个正在运行的文件操作，因此现在更改 Root 选项可能会导致意外错误。您确定要现在更改它吗？</item>
+        <item quantity="other">你有 %1$,d 个正在运行的文件操作，因此现在更改 Root 选项可能会导致意外错误。你确定要现在更改它吗？</item>
     </plurals>
     <string name="settings_archive_file_name_encoding_title">压缩包文件名编码</string>
     <string name="settings_open_apk_default_action_title">点击 Android 安装包时的操作</string>

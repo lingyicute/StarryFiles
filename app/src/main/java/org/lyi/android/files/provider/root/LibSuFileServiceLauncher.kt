@@ -56,7 +56,7 @@ object LibSuFileServiceLauncher {
         synchronized(lock) {
             // libsu won't call back when su isn't available.
             if (!isSuAvailable()) {
-                throw RemoteFileSystemException("Root isn't available")
+                throw RemoteFileSystemException("无权限访问")
             }
             return try {
                 runBlocking {
