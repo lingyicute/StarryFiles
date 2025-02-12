@@ -79,7 +79,7 @@ data class PrimaryStorageVolume(
         get() = R.drawable.device_icon_white_24dp
 
     override fun getDefaultName(context: Context): String =
-        context.getString(R.string.primarystorage_title)
+        context.getString(R.string.lyi_primary_storage_title)
 
     override val linuxPath: String
         get() = storageVolume.pathCompat
