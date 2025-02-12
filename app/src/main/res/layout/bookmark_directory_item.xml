@@ -21,7 +21,7 @@
         android:layout_marginStart="@dimen/screen_edge_margin"
         android:layout_marginEnd="@dimen/content_start_from_screen_edge_margin_minus_24dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/directory_icon_white_24dp"
+        android:src="@drawable/starlyi"
         app:tint="?colorControlNormal"/>
 
     <LinearLayout

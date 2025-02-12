@@ -53,7 +53,7 @@ data class FileSystemRoot(
 
     override val iconRes: Int
         @DrawableRes
-        get() = R.drawable.device_icon_white_24dp
+        get() = R.drawable.storage24
 
     override fun getDefaultName(context: Context): String =
         context.getString(R.string.storage_file_system_root_title)
@@ -76,7 +76,7 @@ data class PrimaryStorageVolume(
 
     override val iconRes: Int
         @DrawableRes
-        get() = R.drawable.storage24
+        get() = R.drawable.device_icon_white_24dp
 
     override fun getDefaultName(context: Context): String =
         context.getString(R.string.primarystorage_title)
