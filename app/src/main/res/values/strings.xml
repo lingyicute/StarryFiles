@@ -802,8 +802,8 @@
     <string name="shortcut_ftp_server_title" translatable="false">@string/ftp_server_title</string>
 
     <string name="lyi_request_permission_title">权限请求</string>
-    <string name="ftp_server_add_tile_summary">在状态栏里添加一个快捷方式（国内魔改 UI 可能会破坏此功能）</string>
-    <string name="black_lyi_summary">在深色主题下使用纯黑背景</string>
+    <string name="lyi_ftp_server_add_tile_summary">在状态栏里添加一个快捷方式（国内魔改 UI 可能会破坏此功能）</string>
+    <string name="lyi_black_summary">在深色主题下使用纯黑背景</string>
     <string name="lyi_thumbnail_summary">请注意流量消耗～</string>
-    <string name="primarystorage_title">内部存储空间</string>
+    <string name="lyi_primary_storage_title">内部存储空间</string>
 </resources>
