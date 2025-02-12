@@ -400,9 +400,9 @@
     <string name="file_properties_checksum_compare_prefix_match_format">与 %1$s 校验和的前缀匹配</string>
     <string name="file_properties_checksum_compare_no_match">未找到匹配的校验和</string>
 
-    <string name="storage_file_system_root_title">根目录</string>
+    <string name="storage_file_system_root_title">文件系统根目录</string>
     <string name="storage_list_title">存储空间列表</string>
-    <string name="storage_list_empty">啥都木有</string>
+    <string name="storage_list_empty">隐藏</string>
     <string name="storage_add_storage_title">添加一个存储空间</string>
     <string name="storage_add_storage_document_tree">外部存储空间</string>
     <string name="storage_add_storage_ftp_server">FTP 服务器</string>
