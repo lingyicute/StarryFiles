@@ -341,7 +341,7 @@ private class BookmarkDirectoryItem(
         get() = bookmarkDirectory.id
 
     @DrawableRes
-    override val iconRes: Int = R.drawable.directory_icon_white_24dp
+    override val iconRes: Int = R.drawable.starlyi
 
     override fun getTitle(context: Context): String = bookmarkDirectory.name
 
