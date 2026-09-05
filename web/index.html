@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StarryFiles：开源 Material Design 文件管理器</title>
+  <meta name="description" content="StarryFiles 是一款开源、轻量、遵循 Material Design 的 Android 文件管理器，支持 Root、压缩包、FTP / SFTP / SMB / WebDAV 与自定义主题。">
+  <meta name="color-scheme" content="light dark">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%236750a4' d='M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --hue: 285;                 /* 种子色相 */
+      --hue-tertiary: calc(var(--hue) + 60);
+      --c-primary: 0.16;
+      --c-secondary: 0.05;
+      --c-tertiary: 0.11;
+      --c-neutral: 0.012;
+      --c-neutral-variant: 0.025;
+
+      /* ---------- Light scheme tones ---------- */
+      --primary:              oklch(0.48 var(--c-primary) var(--hue));
+      --on-primary:           oklch(1 0 0);
+      --primary-container:    oklch(0.92 calc(var(--c-primary) * 0.55) var(--hue));
+      --on-primary-container: oklch(0.25 var(--c-primary) var(--hue));
+
+      --secondary:              oklch(0.5 var(--c-secondary) var(--hue));
+      --on-secondary:           oklch(1 0 0);
+      --secondary-container:    oklch(0.92 calc(var(--c-secondary) * 1.2) var(--hue));
+      --on-secondary-container: oklch(0.25 var(--c-secondary) var(--hue));
+
+      --tertiary:              oklch(0.5 var(--c-tertiary) var(--hue-tertiary));
+      --on-tertiary:           oklch(1 0 0);
+      --tertiary-container:    oklch(0.92 calc(var(--c-tertiary) * 0.6) var(--hue-tertiary));
+      --on-tertiary-container: oklch(0.25 var(--c-tertiary) var(--hue-tertiary));
+
+      --surface:                   oklch(0.985 var(--c-neutral) var(--hue));
+      --surface-dim:               oklch(0.88 var(--c-neutral) var(--hue));
+      --surface-container-lowest:  oklch(1 0 0);
+      --surface-container-low:     oklch(0.965 var(--c-neutral) var(--hue));
+      --surface-container:         oklch(0.945 var(--c-neutral) var(--hue));
+      --surface-container-high:    oklch(0.925 var(--c-neutral) var(--hue));
+      --surface-container-highest: oklch(0.905 var(--c-neutral) var(--hue));
+      --on-surface:                oklch(0.22 var(--c-neutral) var(--hue));
+      --on-surface-variant:        oklch(0.42 var(--c-neutral-variant) var(--hue));
+      --outline:                   oklch(0.58 var(--c-neutral-variant) var(--hue));
+      --outline-variant:           oklch(0.84 var(--c-neutral-variant) var(--hue));
+      --inverse-surface:           oklch(0.28 var(--c-neutral) var(--hue));
+      --inverse-on-surface:        oklch(0.95 var(--c-neutral) var(--hue));
+      --scrim: rgba(0,0,0,.32);
+      --shadow: 0 1px 2px rgba(0,0,0,.12), 0 2px 6px 2px rgba(0,0,0,.08);
+
+      /* 形状与动效 */
+      --shape-xs: 4px;
+      --shape-sm: 8px;
+      --shape-md: 12px;
+      --shape-lg: 16px;
+      --shape-xl: 28px;
+      --shape-full: 9999px;
+      --ease-emph: cubic-bezier(.2, 0, 0, 1);
+      --ease-std: cubic-bezier(.2, 0, 0, 1);
+      --dur: 280ms;
+      color-scheme: light;
+    }
+
+    :root[data-theme="dark"] {
+      --primary:              oklch(0.82 calc(var(--c-primary) * 0.8) var(--hue));
+      --on-primary:           oklch(0.3 var(--c-primary) var(--hue));
+      --primary-container:    oklch(0.4 var(--c-primary) var(--hue));
+      --on-primary-container: oklch(0.93 calc(var(--c-primary) * 0.5) var(--hue));
+
+      --secondary:              oklch(0.82 var(--c-secondary) var(--hue));
+      --on-secondary:           oklch(0.3 var(--c-secondary) var(--hue));
+      --secondary-container:    oklch(0.4 var(--c-secondary) var(--hue));
+      --on-secondary-container: oklch(0.93 var(--c-secondary) var(--hue));
+
+      --tertiary:              oklch(0.82 calc(var(--c-tertiary) * 0.8) var(--hue-tertiary));
+      --on-tertiary:           oklch(0.3 var(--c-tertiary) var(--hue-tertiary));
+      --tertiary-container:    oklch(0.4 var(--c-tertiary) var(--hue-tertiary));
+      --on-tertiary-container: oklch(0.93 calc(var(--c-tertiary) * 0.5) var(--hue-tertiary));
+
+      --surface:                   oklch(0.17 var(--c-neutral) var(--hue));
+      --surface-dim:               oklch(0.17 var(--c-neutral) var(--hue));
+      --surface-container-lowest:  oklch(0.13 var(--c-neutral) var(--hue));
+      --surface-container-low:     oklch(0.21 var(--c-neutral) var(--hue));
+      --surface-container:         oklch(0.24 var(--c-neutral) var(--hue));
+      --surface-container-high:    oklch(0.28 var(--c-neutral) var(--hue));
+      --surface-container-highest: oklch(0.32 var(--c-neutral) var(--hue));
+      --on-surface:                oklch(0.92 var(--c-neutral) var(--hue));
+      --on-surface-variant:        oklch(0.8 var(--c-neutral-variant) var(--hue));
+      --outline:                   oklch(0.6 var(--c-neutral-variant) var(--hue));
+      --outline-variant:           oklch(0.36 var(--c-neutral-variant) var(--hue));
+      --inverse-surface:           oklch(0.92 var(--c-neutral) var(--hue));
+      --inverse-on-surface:        oklch(0.28 var(--c-neutral) var(--hue));
+      --shadow: 0 1px 2px rgba(0,0,0,.4), 0 2px 6px 2px rgba(0,0,0,.25);
+      color-scheme: dark;
+    }
+
+    /* ===========================================================
+       基础
+       =========================================================== */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Google Sans", Roboto, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+      background: var(--surface);
+      color: var(--on-surface);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color var(--dur) var(--ease-std), color var(--dur) var(--ease-std);
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+    .container { width: min(1180px, 100% - 48px); margin-inline: auto; }
+    @media (max-width: 600px) { .container { width: min(1180px, 100% - 32px); } }
+
+    /* Typography scale (M3) */
+    .display-lg { font-size: clamp(2.6rem, 6vw, 4.2rem); line-height: 1.08; font-weight: 500; letter-spacing: -.02em; margin: 0; }
+    .headline-lg { font-size: clamp(1.75rem, 3.2vw, 2.25rem); line-height: 1.2; font-weight: 500; margin: 0; letter-spacing: -.01em; }
+    .headline-sm { font-size: 1.5rem; line-height: 1.3; font-weight: 500; margin: 0; }
+    .title-lg { font-size: 1.375rem; line-height: 1.3; font-weight: 500; margin: 0; }
+    .title-md { font-size: 1rem; line-height: 1.5; font-weight: 600; margin: 0; letter-spacing: .01em; }
+    .body-lg { font-size: 1.0625rem; line-height: 1.6; color: var(--on-surface-variant); margin: 0; }
+    .body-md { font-size: .9375rem; line-height: 1.55; color: var(--on-surface-variant); margin: 0; }
+    .label-lg { font-size: .875rem; font-weight: 500; letter-spacing: .01em; }
+    .label-md { font-size: .75rem; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
+
+    /* ===========================================================
+       按钮 / Chip / Ripple
+       =========================================================== */
+    .btn {
+      position: relative; overflow: hidden; isolation: isolate;
+      display: inline-flex; align-items: center; gap: 8px;
+      height: 44px; padding: 0 24px;
+      border-radius: var(--shape-full);
+      font-size: .9375rem; font-weight: 500; letter-spacing: .01em;
+      transition: box-shadow var(--dur) var(--ease-std), background-color var(--dur) var(--ease-std), transform 120ms var(--ease-std);
+      white-space: nowrap;
+    }
+    .btn:active { transform: scale(.98); }
+    .btn::after { /* state layer */
+      content: ""; position: absolute; inset: 0; background: currentColor; opacity: 0; transition: opacity 160ms; z-index: -1;
+    }
+    .btn:hover::after { opacity: .08; }
+    .btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+    .btn svg { width: 20px; height: 20px; flex: none; }
+    .btn-filled { background: var(--primary); color: var(--on-primary); }
+    .btn-filled:hover { box-shadow: var(--shadow); }
+    .btn-tonal { background: var(--secondary-container); color: var(--on-secondary-container); }
+    .btn-outlined { background: transparent; color: var(--primary); box-shadow: inset 0 0 0 1px var(--outline); }
+    .btn-text { background: transparent; color: var(--primary); padding: 0 12px; }
+    .btn-lg { height: 56px; padding: 0 32px; font-size: 1.0625rem; border-radius: var(--shape-full); }
+    .icon-btn {
+      position: relative; overflow: hidden; isolation: isolate;
+      width: 40px; height: 40px; border-radius: var(--shape-full);
+      display: inline-grid; place-items: center; color: var(--on-surface-variant);
+      transition: background-color 160ms;
+    }
+    .icon-btn:hover { background: color-mix(in oklch, var(--on-surface) 8%, transparent); }
+    .icon-btn svg { width: 24px; height: 24px; }
+
+    .ripple {
+      position: absolute; border-radius: 50%; transform: scale(0);
+      background: currentColor; opacity: .18; pointer-events: none;
+      animation: ripple 560ms var(--ease-std) forwards; z-index: -1;
+    }
+    @keyframes ripple { to { transform: scale(2.6); opacity: 0; } }
+
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 14px;
+      border-radius: var(--shape-sm); font-size: .875rem; font-weight: 500;
+      box-shadow: inset 0 0 0 1px var(--outline-variant); color: var(--on-surface-variant);
+      background: transparent; transition: background-color 160ms, color 160ms, box-shadow 160ms;
+    }
+    .chip[aria-pressed="true"], .chip.selected { background: var(--secondary-container); color: var(--on-secondary-container); box-shadow: none; }
+    .chip:hover { background: color-mix(in oklch, var(--on-surface) 8%, transparent); }
+    .chip .swatch { width: 14px; height: 14px; border-radius: 50%; background: var(--sw); }
+
+    /* ===========================================================
+       Top App Bar
+       =========================================================== */
+    .appbar {
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in oklch, var(--surface) 85%, transparent);
+      backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4);
+      transition: background-color var(--dur), box-shadow var(--dur);
+    }
+    .appbar.scrolled { background: color-mix(in oklch, var(--surface-container) 92%, transparent); }
+    .appbar .inner { height: 64px; display: flex; align-items: center; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 1.125rem; letter-spacing: -.01em; }
+    .brand .logo {
+      width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--tertiary)); color: var(--on-primary);
+    }
+    .brand .logo svg { width: 22px; height: 22px; }
+    .nav { display: flex; gap: 4px; margin-left: 24px; }
+    .nav a { padding: 8px 14px; border-radius: var(--shape-full); font-size: .9375rem; font-weight: 500; color: var(--on-surface-variant); transition: background-color 160ms, color 160ms; }
+    .nav a:hover { background: color-mix(in oklch, var(--on-surface) 8%, transparent); color: var(--on-surface); }
+    .appbar .spacer { flex: 1; }
+    .appbar .actions { display: flex; align-items: center; gap: 4px; }
+    @media (max-width: 820px) { .nav { display: none; } }
+
+    /* ===========================================================
+       Hero
+       =========================================================== */
+    .hero { position: relative; padding: clamp(48px, 8vw, 96px) 0 clamp(48px, 7vw, 80px); overflow: hidden; }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: -1; pointer-events: none;
+      background:
+        radial-gradient(60% 50% at 85% 20%, color-mix(in oklch, var(--primary-container) 80%, transparent), transparent 70%),
+        radial-gradient(45% 45% at 10% 90%, color-mix(in oklch, var(--tertiary-container) 70%, transparent), transparent 70%);
+      transition: background var(--dur);
+    }
+    .star { position: absolute; border-radius: 50%; background: var(--primary); opacity: .35; animation: twinkle var(--t, 3s) ease-in-out infinite alternate; }
+    @keyframes twinkle { from { opacity: .12; transform: scale(.8); } to { opacity: .5; transform: scale(1.2); } }
+
+    .hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: clamp(32px, 5vw, 72px); }
+    @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 14px 0 8px;
+      border-radius: var(--shape-full); background: var(--tertiary-container); color: var(--on-tertiary-container);
+      font-size: .8125rem; font-weight: 600; margin-bottom: 24px;
+    }
+    .eyebrow .dot { width: 18px; height: 18px; border-radius: 50%; background: var(--tertiary); color: var(--on-tertiary); display: grid; place-items: center; }
+    .eyebrow .dot svg { width: 12px; height: 12px; }
+    .hero h1 .accent { color: var(--primary); }
+    .hero .lead { margin-top: 20px; max-width: 34em; }
+    .hero .cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .hero .meta { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 28px; color: var(--on-surface-variant); font-size: .875rem; }
+    .hero .meta span { display: inline-flex; align-items: center; gap: 6px; }
+    .hero .meta svg { width: 16px; height: 16px; color: var(--primary); }
+
+    /* 手机样机 */
+    .phone-wrap { display: grid; place-items: center; position: relative; }
+    .phone-blob {
+      position: absolute; width: min(420px, 90%); aspect-ratio: 1; border-radius: 42% 58% 55% 45% / 50% 40% 60% 50%;
+      background: linear-gradient(140deg, var(--primary-container), var(--tertiary-container));
+      animation: blob 14s ease-in-out infinite alternate; z-index: -1; opacity: .9;
+    }
+    @keyframes blob {
+      0% { border-radius: 42% 58% 55% 45% / 50% 40% 60% 50%; transform: rotate(0deg) scale(1); }
+      100% { border-radius: 55% 45% 40% 60% / 45% 60% 40% 55%; transform: rotate(18deg) scale(1.05); }
+    }
+    .phone {
+      width: min(280px, 70vw); aspect-ratio: 9 / 19.2; border-radius: 36px;
+      background: var(--inverse-surface); box-shadow: 0 30px 60px -20px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.06) inset;
+      position: relative; transform: rotate(-4deg); transition: transform 600ms var(--ease-emph);
+    }
+    .phone:hover { transform: rotate(0deg) translateY(-6px); }
+    .phone .screen { width: 100%; height: 100%; border-radius: 28px; overflow: hidden; background: var(--surface-container-high); position: relative; }
+    .phone .screen img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: opacity 400ms; }
+    .float-card {
+      position: absolute; padding: 12px 16px; border-radius: var(--shape-lg);
+      background: var(--surface-container-lowest); box-shadow: var(--shadow);
+      display: flex; align-items: center; gap: 12px; font-size: .875rem; font-weight: 500;
+      animation: floaty 6s ease-in-out infinite;
+    }
+    .float-card .ic { width: 36px; height: 36px; border-radius: 10px; display: grid; place-items: center; }
+    .float-card .ic svg { width: 20px; height: 20px; }
+    .float-card small { display: block; font-weight: 400; color: var(--on-surface-variant); font-size: .75rem; }
+    .fc1 { top: 12%; left: 0; animation-delay: -1s; }
+    .fc2 { bottom: 14%; right: 0; animation-delay: -3s; }
+    @keyframes floaty { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+    @media (max-width: 600px) { .float-card { display: none; } }
+
+    /* ===========================================================
+       Sections
+       =========================================================== */
+    section { padding: clamp(56px, 8vw, 104px) 0; }
+    .section-head { max-width: 640px; margin-bottom: clamp(32px, 4vw, 48px); }
+    .section-head .label-md { color: var(--primary); display: block; margin-bottom: 12px; }
+    .section-head p { margin-top: 12px; }
+    .section-tonal { background: var(--surface-container-low); border-radius: var(--shape-xl); }
+
+    /* Feature grid */
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .card {
+      background: var(--surface-container-low); border-radius: var(--shape-xl); padding: 28px;
+      transition: background-color var(--dur), transform var(--dur) var(--ease-emph), box-shadow var(--dur);
+      position: relative; overflow: hidden;
+    }
+    .card:hover { background: var(--surface-container); transform: translateY(-4px); }
+    .card .icon {
+      width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; margin-bottom: 20px;
+      background: var(--primary-container); color: var(--on-primary-container);
+      transition: border-radius 400ms var(--ease-emph), background-color var(--dur);
+    }
+    .card:hover .icon { border-radius: 50%; }
+    .card:nth-child(3n+2) .icon { background: var(--tertiary-container); color: var(--on-tertiary-container); }
+    .card:nth-child(3n) .icon { background: var(--secondary-container); color: var(--on-secondary-container); }
+    .card .icon svg { width: 26px; height: 26px; }
+    .card h3 { margin: 0 0 8px; }
+    .card.featured { grid-column: span 2; background: var(--primary-container); color: var(--on-primary-container); display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 24px; }
+    .card.featured .body-md { color: color-mix(in oklch, var(--on-primary-container) 80%, transparent); }
+    .card.featured .icon { background: var(--primary); color: var(--on-primary); }
+    .card.featured .big-star { width: 120px; height: 120px; opacity: .25; color: var(--primary); }
+    @media (max-width: 640px) { .card.featured { grid-column: span 1; grid-template-columns: 1fr; } .card.featured .big-star { display: none; } }
+
+    /* Screenshots gallery */
+    .gallery { display: flex; gap: 20px; overflow-x: auto; padding: 8px 4px 24px; scroll-snap-type: x mandatory; scrollbar-width: none; }
+    .gallery::-webkit-scrollbar { display: none; }
+    .shot {
+      flex: none; width: 230px; aspect-ratio: 9 / 19; border-radius: 24px; overflow: hidden; scroll-snap-align: center;
+      background: var(--surface-container-highest); box-shadow: var(--shadow); cursor: pointer;
+      transition: transform var(--dur) var(--ease-emph), box-shadow var(--dur);
+    }
+    .shot:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 20px 40px -16px rgba(0,0,0,.35); }
+    .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .gallery-ctrl { display: flex; justify-content: center; gap: 8px; }
+    .gallery-ctrl .icon-btn { background: var(--surface-container-high); color: var(--on-surface); }
+
+    /* Why */
+    .why { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+    .why .item { padding: 28px; border-radius: var(--shape-xl); background: var(--surface-container-lowest); box-shadow: inset 0 0 0 1px var(--outline-variant); }
+    .why .num { font-size: 2.5rem; font-weight: 600; line-height: 1; color: var(--primary); margin-bottom: 16px; letter-spacing: -.03em; }
+    .why h3 { margin: 0 0 8px; }
+    code { font-family: ui-monospace, "JetBrains Mono", Consolas, monospace; font-size: .85em; background: var(--surface-container-high); padding: 2px 6px; border-radius: 6px; }
+
+    /* Download */
+    .download {
+      border-radius: var(--shape-xl); padding: clamp(32px, 5vw, 64px);
+      background: linear-gradient(135deg, var(--primary-container), color-mix(in oklch, var(--tertiary-container) 70%, var(--primary-container)));
+      color: var(--on-primary-container); display: grid; grid-template-columns: 1.2fr .8fr; gap: 32px; align-items: center; position: relative; overflow: hidden;
+    }
+    .download .body-lg { color: color-mix(in oklch, var(--on-primary-container) 78%, transparent); }
+    .download .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .download .btn-filled { background: var(--on-primary-container); color: var(--primary-container); }
+    .download .btn-outlined { color: var(--on-primary-container); box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--on-primary-container) 40%, transparent); }
+    .download .deco { justify-self: end; width: min(220px, 60%); color: var(--primary); opacity: .35; }
+    .download .deco svg { width: 100%; height: auto; }
+    @media (max-width: 760px) { .download { grid-template-columns: 1fr; } .download .deco { display: none; } }
+
+    /* Footer */
+    footer { padding: 48px 0 40px; color: var(--on-surface-variant); font-size: .875rem; }
+    footer .row { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--outline-variant); }
+    footer .links { display: flex; flex-wrap: wrap; gap: 4px 20px; }
+    footer .links a:hover { color: var(--primary); }
+
+    /* ===========================================================
+       主题面板（动态取色）
+       =========================================================== */
+    .theme-panel {
+      position: fixed; right: 16px; bottom: 16px; z-index: 60;
+      display: flex; flex-direction: column; align-items: flex-end; gap: 12px;
+    }
+    .fab {
+      position: relative; overflow: hidden; isolation: isolate;
+      height: 56px; padding: 0 20px 0 16px; border-radius: 16px; display: inline-flex; align-items: center; gap: 10px;
+      background: var(--primary-container); color: var(--on-primary-container); font-weight: 600; font-size: .9375rem;
+      box-shadow: var(--shadow); transition: box-shadow var(--dur), border-radius var(--dur) var(--ease-emph), transform 120ms;
+    }
+    .fab:hover { box-shadow: 0 6px 16px rgba(0,0,0,.18); }
+    .fab:active { transform: scale(.97); }
+    .fab svg { width: 24px; height: 24px; }
+    .sheet {
+      width: 300px; max-width: calc(100vw - 32px); padding: 20px; border-radius: var(--shape-xl);
+      background: var(--surface-container-high); box-shadow: 0 8px 28px rgba(0,0,0,.2);
+      transform-origin: bottom right; transition: transform 260ms var(--ease-emph), opacity 200ms;
+    }
+    .sheet[hidden] { display: block; opacity: 0; transform: scale(.85) translateY(10px); pointer-events: none; }
+    .sheet h4 { margin: 0 0 4px; font-size: 1rem; }
+    .sheet .hint { margin: 0 0 14px; font-size: .8125rem; color: var(--on-surface-variant); }
+    .seeds { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 16px; }
+    .seed {
+      width: 40px; height: 40px; border-radius: 50%; position: relative; display: grid; place-items: center;
+      background: var(--sw); transition: transform 160ms, box-shadow 160ms; box-shadow: 0 0 0 0 var(--primary);
+    }
+    .seed:hover { transform: scale(1.08); }
+    .seed[aria-pressed="true"] { box-shadow: 0 0 0 2px var(--surface-container-high), 0 0 0 4px var(--primary); }
+    .seed svg { width: 18px; height: 18px; color: #fff; opacity: 0; transition: opacity 160ms; filter: drop-shadow(0 1px 1px rgba(0,0,0,.3)); }
+    .seed[aria-pressed="true"] svg { opacity: 1; }
+    .seed.custom { background: conic-gradient(red, yellow, lime, cyan, blue, magenta, red); overflow: hidden; }
+    .seed.custom input { position: absolute; inset: -10px; opacity: 0; cursor: pointer; width: 60px; height: 60px; }
+    .mode-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; border-top: 1px solid var(--outline-variant); font-size: .9375rem; font-weight: 500; }
+    .switch { position: relative; width: 52px; height: 32px; border-radius: 16px; background: var(--surface-container-highest); box-shadow: inset 0 0 0 2px var(--outline); transition: background-color var(--dur), box-shadow var(--dur); }
+    .switch .knob { position: absolute; top: 8px; left: 8px; width: 16px; height: 16px; border-radius: 50%; background: var(--outline); transition: all var(--dur) var(--ease-emph); }
+    .switch[aria-checked="true"] { background: var(--primary); box-shadow: none; }
+    .switch[aria-checked="true"] .knob { left: 24px; top: 4px; width: 24px; height: 24px; background: var(--on-primary); }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 600ms var(--ease-std), transform 600ms var(--ease-emph); }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    /* Lightbox */
+    .lightbox { position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,.6); backdrop-filter: blur(8px); display: grid; place-items: center; padding: 24px; opacity: 0; pointer-events: none; transition: opacity 200ms; }
+    .lightbox.open { opacity: 1; pointer-events: auto; }
+    .lightbox img { max-height: 90vh; max-width: 90vw; border-radius: 24px; box-shadow: 0 30px 80px rgba(0,0,0,.5); transform: scale(.94); transition: transform 260ms var(--ease-emph); }
+    .lightbox.open img { transform: scale(1); }
+  </style>
+</head>
+<body>
+
+  <!-- ============ Top App Bar ============ -->
+  <header class="appbar" id="appbar">
+    <div class="container inner">
+      <a class="brand" href="#top" aria-label="StarryFiles 首页">
+        <span class="logo" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/></svg>
+        </span>
+        StarryFiles
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="#features">特性</a>
+        <a href="#screens">截图</a>
+        <a href="#why">为什么</a>
+        <a href="#download">下载</a>
+      </nav>
+      <div class="spacer"></div>
+      <div class="actions">
+        <button class="icon-btn" id="modeBtn" title="切换深浅色" aria-label="切换深浅色">
+          <svg class="ic-dark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26 5.4 5.4 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+          <svg class="ic-light" viewBox="0 0 24 24" fill="currentColor" style="display:none"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0-5h0a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0V3a1 1 0 0 1 1-1zm0 18a1 1 0 0 1 1 1v2a1 1 0 1 1-2 0v-2a1 1 0 0 1 1-1zM3 11h2a1 1 0 1 1 0 2H3a1 1 0 1 1 0-2zm16 0h2a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2zM5.6 4.2l1.4 1.4a1 1 0 1 1-1.4 1.4L4.2 5.6a1 1 0 0 1 1.4-1.4zM17 17l1.4 1.4a1 1 0 1 1-1.4 1.4L15.6 18.4A1 1 0 0 1 17 17zm2.8-11.4a1 1 0 0 1 0 1.4L18.4 8.4A1 1 0 1 1 17 7l1.4-1.4a1 1 0 0 1 1.4 0zM7 17a1 1 0 0 1 0 1.4l-1.4 1.4a1 1 0 1 1-1.4-1.4L5.6 17A1 1 0 0 1 7 17z"/></svg>
+        </button>
+        <a class="icon-btn" href="https://github.com/lingyicute/StarryFiles" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub 仓库">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.36-3.87-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.62 1.59.23 2.76.11 3.05.74.8 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+        </a>
+        <a class="btn btn-filled" href="#download" style="height:40px;padding:0 20px;margin-left:8px">获取应用</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ============ Hero ============ -->
+    <section class="hero">
+      <div class="hero-bg" id="heroBg"></div>
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">
+            <span class="dot"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg></span>
+            GPL-3.0 · Android 5.0+ · Made with ❤️ by lingyicute
+          </span>
+          <h1 class="display-lg">Just another file manager,<br>Simple yet<span class="accent"> Powerful</span>.</h1>
+          <p class="body-lg lead">StarryFiles 是一款遵循 Material Design 的开源文件管理器。轻量、干净、安全，懂你心意。化繁为简，威力不减。</p>
+          <div class="cta">
+            <a class="btn btn-filled btn-lg" href="https://github.com/lingyicute/StarryFiles/releases" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+              下载 APK
+            </a>
+            <a class="btn btn-tonal btn-lg" href="https://github.com/lingyicute/StarryFiles" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+              查看源码
+            </a>
+          </div>
+          <div class="meta">
+            <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>无广告、无追踪</span>
+            <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>由 libc 标准调用驱动</span>
+            <span><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>Material You</span>
+          </div>
+        </div>
+
+        <div class="phone-wrap">
+          <div class="phone-blob" aria-hidden="true"></div>
+          <div class="phone">
+            <div class="screen">
+              <img id="heroShot" src="https://raw.githubusercontent.com/lingyicute/StarryStoreStatics/main/0/repo/org.lyi.android.files/en-US/phoneScreenshots/01.jpg" alt="StarryFiles 应用截图" loading="eager">
+            </div>
+          </div>
+          <div class="float-card fc1" aria-hidden="true">
+            <span class="ic" style="background:var(--tertiary-container);color:var(--on-tertiary-container)">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/></svg>
+            </span>
+            <span>Download<small>128 项 · 2.4 GB</small></span>
+          </div>
+          <div class="float-card fc2" aria-hidden="true">
+            <span class="ic" style="background:var(--primary-container);color:var(--on-primary-container)">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8 3 3 3-3a4.24 4.24 0 0 0-6 0zm-4-4 2 2a7.07 7.07 0 0 1 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+            </span>
+            <span>已连接 FTP<small>192.168.1.10</small></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Features ============ -->
+    <section id="features">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="label-md">Features</span>
+          <h2 class="headline-lg">化繁为简，<br>但威力不减。</h2>
+          <p class="body-lg">遵循 Material Design 规范，注重细节。底层用对的技术，上层保持克制。</p>
+        </div>
+        <div class="features">
+          <article class="card featured reveal">
+            <div>
+              <div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg></div>
+              <h3 class="title-lg">Material Design，且是干净的那种</h3>
+              <p class="body-md">布局、对齐、间距、图标、字体——那些别人懒得修的小瑕疵，这里没有。支持自定义 UI 颜色、夜间模式与可选的纯黑主题。</p>
+            </div>
+            <svg class="big-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1 3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg></div>
+            <h3 class="title-lg">开源可信</h3>
+            <p class="body-md">GPL-3.0 许可。把 Root 权限交给一款闭源应用令人不安，交给开源代码则心安理得。</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-8l-2-2z"/><path d="M8 13h8v2H8z" fill="var(--surface-container-low)"/></svg></div>
+            <h3 class="title-lg">面包屑导航</h3>
+            <p class="body-md">路径层级一目了然，在文件系统中任意跳转、轻松回溯。</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 6h-8l-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zm-8 2h2v2h-2V8zm2 2h2v2h-2v-2zm-2 2h2v2h-2v-2zm2 2h2v2h-2v-2z"/></svg></div>
+            <h3 class="title-lg">压缩包支持</h3>
+            <p class="body-md">直接查看、解压与创建常见压缩格式，一步搞定不折腾。</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 13H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2zM6 18a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm14-15H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM6 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg></div>
+            <h3 class="title-lg">网络存储</h3>
+            <p class="body-md">支持 FTP、SFTP、SMB 与 WebDAV，像本地文件夹一样浏览和管理远程文件。</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zM8 15l-1.4-1.4L9.2 11 6.6 8.4 8 7l4 4-4 4zm10 0h-6v-2h6v2z"/></svg></div>
+            <h3 class="title-lg">Root 支持</h3>
+            <p class="body-md">以 Root 身份查看与管理系统文件，操作透明可审计。</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm-1 15-4-4 1.41-1.41L11 14.17 17.59 7.6 19 9l-8 8z"/></svg></div>
+            <h3 class="title-lg">Linux 感知</h3>
+            <p class="body-md">像 Nautilus 一样理解符号链接、文件权限与 SELinux 上下文，甚至能处理非法 UTF-8 文件名。</p>
+          </article>
+
+          <article class="card reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8z"/></svg></div>
+            <h3 class="title-lg">快速且健壮</h3>
+            <p class="body-md">用 NIO2 的接口形态作骨架的重新实现，通过 JNI 直达 libc 标准调用，杜绝文件管理器家族的解析 <code>ls</code> 顽疾。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Screenshots ============ -->
+    <section id="screens" style="padding-top:0">
+      <div class="container">
+        <div class="section-tonal" style="padding:clamp(32px,5vw,56px) clamp(20px,4vw,48px)">
+          <div class="section-head reveal" style="margin-bottom:24px">
+            <span class="label-md">Preview</span>
+            <h2 class="headline-lg">看看它长什么样</h2>
+            <p class="body-lg">截图来自项目仓库，点击可放大。</p>
+          </div>
+          <div class="gallery" id="gallery">
+            <figure class="shot reveal"><img src="https://raw.githubusercontent.com/lingyicute/StarryFiles/main/fastlane/metadata/android/en-US/images/phoneScreenshots/1.png" alt="截图 1" loading="lazy"></figure>
+            <figure class="shot reveal"><img src="https://raw.githubusercontent.com/lingyicute/StarryFiles/main/fastlane/metadata/android/en-US/images/phoneScreenshots/2.png" alt="截图 2" loading="lazy"></figure>
+            <figure class="shot reveal"><img src="https://raw.githubusercontent.com/lingyicute/StarryFiles/main/fastlane/metadata/android/en-US/images/phoneScreenshots/3.png" alt="截图 3" loading="lazy"></figure>
+            <figure class="shot reveal"><img src="https://raw.githubusercontent.com/lingyicute/StarryFiles/main/fastlane/metadata/android/en-US/images/phoneScreenshots/4.png" alt="截图 4" loading="lazy"></figure>
+            <figure class="shot reveal"><img src="https://raw.githubusercontent.com/lingyicute/StarryFiles/main/fastlane/metadata/android/en-US/images/phoneScreenshots/5.png" alt="截图 5" loading="lazy"></figure>
+            <figure class="shot reveal"><img src="https://raw.githubusercontent.com/lingyicute/StarryFiles/main/fastlane/metadata/android/en-US/images/phoneScreenshots/6.png" alt="截图 6" loading="lazy"></figure>
+          </div>
+          <div class="gallery-ctrl">
+            <button class="icon-btn" id="prevBtn" aria-label="上一张"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg></button>
+            <button class="icon-btn" id="nextBtn" aria-label="下一张"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.6 16.6 10 18l6-6-6-6-1.4 1.4 4.6 4.6z"/></svg></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Why ============ -->
+    <section id="why" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="label-md">Why StarryFiles</span>
+          <h2 class="headline-lg">为什么又造一个文件管理器？</h2>
+          <p class="body-lg">因为我喜欢 Material Design，喜欢开源，也相信「把事情做对」这件事本身值得。</p>
+        </div>
+        <div class="why">
+          <div class="item reveal">
+            <div class="num">01</div>
+            <h3 class="title-lg">正确的后端</h3>
+            <p class="body-md">以 <code>Java NIO2 File API</code> 作为后端，而非自创一个和 UI 纠缠不清的文件模型。解耦意味着更少的 Bug，也更容易接入新的文件系统。</p>
+          </div>
+          <div class="item reveal">
+            <div class="num">02</div>
+            <h3 class="title-lg">直达系统调用</h3>
+            <p class="body-md">不用 <code>java.io.File</code>，也不解析 <code>ls</code>。直接绑定 Linux syscall，因而快速、可靠，能正确处理符号链接、权限与 SELinux 上下文。</p>
+          </div>
+          <div class="item reveal">
+            <div class="num">03</div>
+            <h3 class="title-lg">现代的前端</h3>
+            <p class="body-md">基于 <code>ViewModel</code> 与 <code>LiveData</code> 构建，结构清晰、天然支持旋转，并妥善处理操作错误、文件冲突与前后台状态。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Download ============ -->
+    <section id="download" style="padding-top:0">
+      <div class="container">
+        <div class="download reveal">
+          <div>
+            <span class="label-md" style="opacity:.8">Get StarryFiles</span>
+            <h2 class="headline-lg" style="margin-top:8px">准备好了吗？<br>把星光装进口袋。</h2>
+            <p class="body-lg" style="margin-top:14px">支持 Android 5.0 及以上版本。欢迎 Star、提交 Issue 或 Pull Request，一起把它打磨得更好。</p>
+            <div class="btns">
+              <a class="btn btn-filled btn-lg" href="https://github.com/lingyicute/StarryFiles/releases" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
+                GitHub Releases
+              </a>
+              <a class="btn btn-outlined btn-lg" href="https://github.com/lingyicute/StarryFiles" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                Star on GitHub
+              </a>
+              <a class="btn btn-text btn-lg" href="https://github.com/lingyicute/StarryFiles/blob/main/README_zh-CN.md" target="_blank" rel="noopener" style="color:var(--on-primary-container)">
+                阅读中文文档 →
+              </a>
+            </div>
+          </div>
+          <div class="deco" aria-hidden="true">
+            <svg viewBox="0 0 200 200" fill="currentColor">
+              <path d="M100 10l17 47 47 17-47 17-17 47-17-47-47-17 47-17z"/>
+              <circle cx="160" cy="150" r="10"/><circle cx="40" cy="160" r="6"/><circle cx="170" cy="40" r="5"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div>
+          <strong style="color:var(--on-surface)">StarryFiles</strong> · © 2025 lingyicute · 以 <a href="https://github.com/lingyicute/StarryFiles/blob/main/LICENSE" target="_blank" rel="noopener" style="color:var(--primary)">GPL-3.0</a> 许可发布
+          <div style="margin-top:4px">基于 <a href="https://github.com/zhanghai/MaterialFiles" target="_blank" rel="noopener" style="color:var(--primary)">MaterialFiles</a>（zhanghai）开发，致谢上游。</div>
+        </div>
+        <div class="links">
+          <a href="https://github.com/lingyicute/StarryFiles" target="_blank" rel="noopener">仓库</a>
+          <a href="https://github.com/lingyicute/StarryFiles/issues" target="_blank" rel="noopener">反馈问题</a>
+          <a href="https://github.com/lingyicute/StarryFiles/releases" target="_blank" rel="noopener">发行版</a>
+          <a href="https://github.com/lingyicute/StarryFiles/blob/main/README_zh-CN.md" target="_blank" rel="noopener">中文说明</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ 主题面板（Material You 动态取色） ============ -->
+  <div class="theme-panel">
+    <div class="sheet" id="sheet" hidden>
+      <h4>主题色</h4>
+      <p class="hint">Material You：选一个种子色，整套配色随之生成。</p>
+      <div class="seeds" id="seeds">
+        <button class="seed" data-hue="285" style="--sw:oklch(.55 .18 285)" aria-label="星夜紫" aria-pressed="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></button>
+        <button class="seed" data-hue="250" style="--sw:oklch(.55 .18 250)" aria-label="深空蓝"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></button>
+        <button class="seed" data-hue="200" style="--sw:oklch(.6 .14 200)" aria-label="极光青"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></button>
+        <button class="seed" data-hue="150" style="--sw:oklch(.6 .15 150)" aria-label="森林绿"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></button>
+        <button class="seed" data-hue="70" style="--sw:oklch(.72 .16 70)" aria-label="暖阳黄"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></button>
+        <button class="seed" data-hue="30" style="--sw:oklch(.62 .18 30)" aria-label="落日橙"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></button>
+        <button class="seed" data-hue="350" style="--sw:oklch(.6 .18 350)" aria-label="樱花粉"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></button>
+        <label class="seed custom" aria-label="自定义颜色" title="自定义颜色">
+          <input type="color" id="customColor" value="#6750a4">
+        </label>
+      </div>
+      <div class="mode-row">
+        <span>深色模式</span>
+        <button class="switch" id="modeSwitch" role="switch" aria-checked="false" aria-label="深色模式"><span class="knob"></span></button>
+      </div>
+    </div>
+    <button class="fab" id="fab" aria-expanded="false" aria-controls="sheet">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3a9 9 0 0 0 0 18c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01a1.5 1.5 0 0 1 1.12-2.49H16a5 5 0 0 0 5-5c0-4.42-4.03-8-9-8zM6.5 12a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3-4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm3 4a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/></svg>
+      主题
+    </button>
+  </div>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="放大截图">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const $ = (s, el = document) => el.querySelector(s);
+      const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+
+      /* ---------- 主题：色相 + 深浅 ---------- */
+      const store = {
+        get: (k, d) => { try { return localStorage.getItem(k) ?? d; } catch { return d; } },
+        set: (k, v) => { try { localStorage.setItem(k, v); } catch {} }
+      };
+
+      function setHue(h, persist = true) {
+        h = ((Math.round(h) % 360) + 360) % 360;
+        root.style.setProperty('--hue', h);
+        $$('.seed[data-hue]').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.hue === h)));
+        if (persist) store.set('sf-hue', h);
+      }
+
+      function setDark(on, persist = true) {
+        root.dataset.theme = on ? 'dark' : 'light';
+        $('#modeSwitch').setAttribute('aria-checked', String(on));
+        $('.ic-dark').style.display = on ? 'none' : '';
+        $('.ic-light').style.display = on ? '' : 'none';
+        $('meta[name="theme-color"]')?.remove();
+        if (persist) store.set('sf-dark', on ? '1' : '0');
+      }
+
+      // 十六进制 -> 色相（sRGB -> HSL 近似即可）
+      function hexToHue(hex) {
+        const n = parseInt(hex.slice(1), 16);
+        const r = ((n >> 16) & 255) / 255, g = ((n >> 8) & 255) / 255, b = (n & 255) / 255;
+        const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
+        if (!d) return 285;
+        let h;
+        if (max === r) h = ((g - b) / d) % 6;
+        else if (max === g) h = (b - r) / d + 2;
+        else h = (r - g) / d + 4;
+        h = h * 60; if (h < 0) h += 360;
+        // sRGB 色相与 oklch 色相有偏移，粗略校正
+        return (h + 20) % 360;
+      }
+
+      // 初始化
+      const savedHue = store.get('sf-hue', null);
+      const savedDark = store.get('sf-dark', null);
+      const prefersDark = matchMedia('(prefers-color-scheme: dark)');
+      setHue(savedHue !== null ? +savedHue : 285, false);
+      setDark(savedDark !== null ? savedDark === '1' : prefersDark.matches, false);
+      prefersDark.addEventListener('change', e => { if (store.get('sf-dark', null) === null) setDark(e.matches, false); });
+
+      $('#modeBtn').addEventListener('click', () => setDark(root.dataset.theme !== 'dark'));
+      $('#modeSwitch').addEventListener('click', () => setDark(root.dataset.theme !== 'dark'));
+      $('#seeds').addEventListener('click', e => {
+        const b = e.target.closest('.seed[data-hue]');
+        if (b) setHue(+b.dataset.hue);
+      });
+      $('#customColor').addEventListener('input', e => setHue(hexToHue(e.target.value)));
+
+      // 主题面板开合
+      const fab = $('#fab'), sheet = $('#sheet');
+      fab.addEventListener('click', () => {
+        const open = sheet.hasAttribute('hidden');
+        sheet.toggleAttribute('hidden', !open);
+        fab.setAttribute('aria-expanded', String(open));
+      });
+      document.addEventListener('click', e => {
+        if (!e.target.closest('.theme-panel') && !sheet.hasAttribute('hidden')) {
+          sheet.setAttribute('hidden', ''); fab.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      /* ---------- Ripple ---------- */
+      document.addEventListener('pointerdown', e => {
+        const el = e.target.closest('.btn, .icon-btn, .fab, .chip');
+        if (!el) return;
+        const rect = el.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        const r = document.createElement('span');
+        r.className = 'ripple';
+        r.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX - rect.left - size / 2}px;top:${e.clientY - rect.top - size / 2}px;`;
+        el.appendChild(r);
+        r.addEventListener('animationend', () => r.remove());
+      });
+
+      /* ---------- App bar 滚动阴影 ---------- */
+      const appbar = $('#appbar');
+      const onScroll = () => appbar.classList.toggle('scrolled', scrollY > 8);
+      addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+      /* ---------- 滚动显现 ---------- */
+      const io = new IntersectionObserver(entries => {
+        entries.forEach((en, i) => {
+          if (en.isIntersecting) {
+            en.target.style.transitionDelay = `${Math.min(i * 60, 300)}ms`;
+            en.target.classList.add('in'); io.unobserve(en.target);
+          }
+        });
+      }, { threshold: .12, rootMargin: '0px 0px -40px' });
+      $$('.reveal').forEach(el => io.observe(el));
+
+      /* ---------- Hero 星点 ---------- */
+      const bg = $('#heroBg');
+      for (let i = 0; i < 26; i++) {
+        const s = document.createElement('span');
+        s.className = 'star';
+        const size = 2 + Math.random() * 4;
+        s.style.cssText = `left:${Math.random() * 100}%;top:${Math.random() * 100}%;width:${size}px;height:${size}px;--t:${2 + Math.random() * 3}s;animation-delay:${-Math.random() * 4}s`;
+        bg.appendChild(s);
+      }
+
+      /* ---------- 画廊控制 + Lightbox ---------- */
+      const gallery = $('#gallery');
+      const step = () => ($('.shot', gallery)?.offsetWidth || 230) + 20;
+      $('#prevBtn').addEventListener('click', () => gallery.scrollBy({ left: -step(), behavior: 'smooth' }));
+      $('#nextBtn').addEventListener('click', () => gallery.scrollBy({ left: step(), behavior: 'smooth' }));
+
+      const lb = $('#lightbox'), lbImg = $('#lightboxImg');
+      gallery.addEventListener('click', e => {
+        const img = e.target.closest('img'); if (!img) return;
+        lbImg.src = img.src; lbImg.alt = img.alt; lb.classList.add('open');
+      });
+      lb.addEventListener('click', () => lb.classList.remove('open'));
+      addEventListener('keydown', e => { if (e.key === 'Escape') { lb.classList.remove('open'); sheet.setAttribute('hidden', ''); } });
+    })();
+  </script>
+</body>
+</html>
