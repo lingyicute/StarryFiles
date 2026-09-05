@@ -434,10 +434,10 @@
         <div>
           <span class="eyebrow">
             <span class="dot"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg></span>
-            GPL-3.0 · Android 5.0+ · Made with ❤️ by lingyicute
+            开源 · GPL-3.0 · Android 5.0+
           </span>
           <h1 class="display-lg">Just another file manager,<br>Simple yet<span class="accent"> Powerful</span>.</h1>
-          <p class="body-lg lead">StarryFiles 是一款遵循 Material Design 的开源文件管理器。轻量、干净、安全，懂你心意。化繁为简，威力不减。</p>
+          <p class="body-lg lead">StarryFiles 是一款遵循 Material Design 的开源文件管理器。轻量、干净、安全，懂你心意。</p>
           <div class="cta">
             <a class="btn btn-filled btn-lg" href="https://github.com/lingyicute/StarryFiles/releases" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
@@ -715,7 +715,6 @@
         else if (max === g) h = (b - r) / d + 2;
         else h = (r - g) / d + 4;
         h = h * 60; if (h < 0) h += 360;
-        // sRGB 色相与 oklch 色相有偏移，粗略校正
         return (h + 20) % 360;
       }
 
