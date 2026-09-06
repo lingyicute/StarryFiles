@@ -105,10 +105,7 @@ Built with **Android Architecture Components (ViewModel, LiveData)**, StarryFile
 
 ## 📥 Download & Installation
 
-You can get the latest stable build of StarryFiles via:
-
-- **[GitHub Releases](https://github.com/lingyicute/StarryFiles/releases)** (Universal APK & split architectures)
-- **[Official Website](https://sf.92li.uk/)**
+- **[GitHub Releases](https://github.com/lingyicute/StarryFiles/releases)**
 
 ### System Requirements
 - **Android Version**: Android 5.0 (Lollipop, API Level 21) or above.
@@ -155,7 +152,7 @@ Thank you for choosing to bundle StarryFiles in your custom ROM distribution! To
 
 ---
 
-## 🤝 Contributing
+## 🤗 Contributing
 
 Contributions are always welcome!
 - **Bug Reports & Feature Requests**: Submit an issue on the [GitHub Issue Tracker](https://github.com/lingyicute/StarryFiles/issues).
