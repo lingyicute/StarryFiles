@@ -19,10 +19,10 @@ jobs:
         java-version: '17'
 
     - name: Build with Gradle
-      run: ./gradlew assembleRelease && tree -a
+      run: ./gradlew assembleRelease
       
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: APK
-        path: app/build/outputs/apk/release
+        path: app/build/outputs/apk/release/app-release.apk
