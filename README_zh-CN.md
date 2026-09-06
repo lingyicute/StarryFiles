@@ -65,7 +65,7 @@
 
 - **⚡ Linux 级感知与 Root 权限支持**
   - 具备类似桌面端 Nautilus 的完整 Linux 感知能力。
-  - 完美支持**符号链接（Symlink）**、**POSIX 文件权限与归属（chmod/chown）**以及 **SELinux 上下文**。
+  - 完美支持符号链接（Symlink）、POSIX 文件权限与归属（chmod/chown）以及 SELinux 上下文。
   - 正确处理非法 UTF-8 编码的特殊文件名，杜绝常见文件管理器出现的乱码与崩溃。
 
 - **🚀 快速、健壮的技术架构**
@@ -93,7 +93,7 @@
 ## 🛠️ 为什么选择 StarryFiles？（底层设计解析）
 
 ### 1. 正确的后端架构（Java NIO.2）
-摒弃了传统文件管理器中将 UI 状态与文件操作杂糅的模型，StarryFiles 完整实现了 **Java NIO2 File API** 作为基础后端。清晰的解耦意味着更少的偶发 Bug，并且未来扩展新文件协议时更加轻盈。
+StarryFiles 摒弃了传统文件管理器中[将 UI 状态与文件操作杂糅的模型](https://github.com/TeamAmaze/AmazeFileManager/blob/master/app/src/main/java/com/amaze/filemanager/filesystem/HybridFile.java)，完整实现了 **Java NIO2 File API** 作为基础后端。清晰的解耦意味着更少的偶发 Bug，并且未来扩展新文件协议时更加轻盈。
 
 ### 2. 直达内核系统调用（Linux Syscall）
 陈旧的 `java.io.File` 无法正确识别符号链接与权限，许多同类工具因此选择解析终端 `ls` 命令输出，但这既缓慢又极易在不同 ROM 或系统版本上发生解析崩溃。StarryFiles 采用 JNI 方式直接绑定 Linux 标准 libc 系统调用，带来极致流畅、稳定以及精准的原生文件操作体验。
@@ -105,10 +105,7 @@
 
 ## 📥 下载与安装
 
-你可以通过以下渠道获取最新版本的 StarryFiles 安装包：
-
 - **[GitHub Releases 下载页](https://github.com/lingyicute/StarryFiles/releases)**
-- **[官方网站](https://sf.92li.uk/)**
 
 ### 运行环境
 - **系统要求**：Android 5.0（Lollipop，API Level 21）及以上。
@@ -149,13 +146,13 @@
 
 如果您希望将 StarryFiles 预装集成到您的定制 ROM 中，非常感谢您的支持！为了保证最终用户的最佳体验，请注意以下几点：
 
-1. **请勿替换 AOSP `DocumentsUI`**：StarryFiles 并非设计用来替代系统的存储访问框架（SAF）选择器。本应用依赖系统的 DocumentsUI 来获取外置 SD 卡或特定目录的授权。
+1. **请勿替换 AOSP `DocumentsUI`**：StarryFiles 并非设计用来替代系统的存储访问框架（SAF）选择器。相反，本应用依赖系统的 DocumentsUI 来获取外置 SD 卡或特定目录的授权。
 2. **允许用户卸载或停用**：请确保预装时未将应用锁定为不可卸载，允许不需要的用户自主移除。
 3. **避免签名冲突**：如果使用 ROM 私有签名密钥重新打包，建议更改 Application ID 包名，以避免用户未来通过官方渠道升级时发生签名冲突。
 
 ---
 
-## 🤝 参与贡献
+## 🤗 参与贡献
 
 欢迎随时参与完善 StarryFiles！
 - **问题反馈与需求建议**：在 [GitHub Issues](https://github.com/lingyicute/StarryFiles/issues) 中提交。
@@ -164,10 +161,10 @@
 
 ---
 
-## 📄 开源许可证
+## 📄 许可
 
 ```text
-Copyright (C) 2025 lingyicute <li@92li.us.kg>
+Copyright (C) 2025-2026 lingyicute <li@92li.uk>
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
