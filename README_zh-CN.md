@@ -14,7 +14,7 @@
 ###  ‎
 
 <p align="center">
-  [🇺🇸 English] • <a href="README_zh-CN.md">🇨🇳 中文</a> •
+  <a href="README.md">🇺🇸 English</a> • [🇨🇳 中文] • 
   <a href="https://sf.92li.uk/">🌐 官方网站</a> •
   <a href="https://github.com/lingyicute/StarryFiles/releases">📦 下载 APK</a> •
   <a href="https://github.com/lingyicute/StarryFiles/issues">🐛 报告问题</a>
