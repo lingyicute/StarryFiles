@@ -2,6 +2,9 @@ name: Android CI
 
 on: [push]
 
+permissions:   
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,7 +23,23 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew assembleRelease
-      
+    
+    - name: Delete old nightly release 
+      run: gh release delete nightly --yes --cleanup-tag || true
+      env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Publish nightly release 
+      run: |
+          gh release create nightly \
+            app/build/outputs/apk/release/app-release.apk \
+            --title "Nightly Build" \
+            --notes "auto build · ${GITHUB_SHA:0:7} · ${GITHUB_REF_NAME}" \
+            --prerelease \
+            --target "$GITHUB_SHA"
+      env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
