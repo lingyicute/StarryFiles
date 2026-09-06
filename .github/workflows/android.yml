@@ -19,7 +19,7 @@ jobs:
         java-version: '17'
 
     - name: Build with Gradle
-      run: ./gradlew assembleRelease
+      run: ./gradlew assembleRelease && tree -a
       
     - name: Upload artifact
       uses: actions/upload-artifact@v4
