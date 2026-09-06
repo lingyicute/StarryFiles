@@ -866,7 +866,10 @@
         if (document.readyState === 'complete') resolve();
         else addEventListener('load', resolve, { once: true });
       });
-
+      
+      // 兜底：若个别资源异常卡住，最长等待后仍隐藏，避免页面被覆盖。
+      const safetyTimeout = new Promise(resolve => setTimeout(resolve, 8000));
+      
       Promise.race([
         Promise.all([imagesReady, windowReady]),
         safetyTimeout
