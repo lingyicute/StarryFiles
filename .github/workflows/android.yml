@@ -34,7 +34,7 @@ jobs:
           gh release create nightly \
             app/build/outputs/apk/release/app-release.apk \
             --title "Nightly Build" \
-            --notes "auto build · ${GITHUB_SHA:0:7} · ${GITHUB_REF_NAME}" \
+            --notes "Auto build · Commit: ${GITHUB_SHA:0:7} · Branch: ${GITHUB_REF_NAME}" \
             --prerelease \
             --target "$GITHUB_SHA"
       env:
