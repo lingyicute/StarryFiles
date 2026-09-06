@@ -142,7 +142,11 @@ dependencies {
         // org.bouncycastle:bcprov-jdk15to18 instead.
         exclude group: 'org.bouncycastle', module: 'bcprov-jdk15on'
     }
-    def bouncy_castle_version = '1.85'
+    // Do not upgrade to 1.85: it ships org.bouncycastle.asn1.iana.IANAObjectIdentifiers
+    // in BOTH bcprov and bcutil, which fails :app:checkReleaseDuplicateClasses.
+    // bcutil is pulled in transitively by bcpkix. 1.84 still contains the
+    // CVE-2025-8916 fix (landed in 1.79) and has no overlapping classes.
+    def bouncy_castle_version = '1.84'
     implementation "org.bouncycastle:bcprov-jdk15to18:$bouncy_castle_version"
     implementation ('com.hierynomus:sshj:0.40.0') {
         exclude group: 'org.bouncycastle', module: 'bcprov-jdk18on'
