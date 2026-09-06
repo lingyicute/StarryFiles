@@ -88,9 +88,16 @@ repositories {
     }
 }
 dependencies {
-    implementation('com.github.bitfireAT:dav4jvm:c1bc143') {
-        exclude group: 'org.ogce', module: 'xpp3'
-    }
+    // dav4jvm: vendored as a local jar (app/libs/dav4jvm-c1bc1434883.jar).
+    // Upstream commit c1bc14348831bcdb00f3a6eec4859b81c7dc3728 (bitfireAT/dav4jvm, MPL-2.0).
+    // JitPack silently dropped the cached artifacts for the short alias "c1bc143",
+    // which broke CI builds; the jar is checked in so builds stay reproducible.
+    // It is picked up by the fileTree(dir: 'libs') entry below.
+    // Transitive deps of that jar, declared manually (no pom anymore):
+    //   - okhttp 4.12.0
+    //   - kotlin-stdlib (already provided by the project)
+    //   - org.ogce:xpp3 -> intentionally omitted, Android ships XmlPullParser
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
     implementation 'com.github.chrisbanes:PhotoView:2.3.0'
     implementation 'com.github.topjohnwu.libsu:service:5.2.2'
 }
