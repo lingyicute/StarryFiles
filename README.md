@@ -8,7 +8,8 @@
 <h1 align="center">StarryFiles</h1>
 <h3 align="center">Just another file manager, simple yet powerful.</h3>‎‎
 
-<p align="center">A clean, lightweight, and secure file manager for Android, crafted with pure Material Design and modern Linux-native engineering. Made with ❤️ by <a href="https://github.com/lingyicute">lingyicute</a>.</p>
+<p align="center">A clean, lightweight, and secure file manager, crafted with pure Material Design and modern Linux-native engineering.</p>
+<p align="center">Made with ❤️ by <a href="https://github.com/lingyicute">lingyicute</a>.</p>
 
 ###  ‎
 
