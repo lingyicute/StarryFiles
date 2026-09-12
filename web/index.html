@@ -339,6 +339,13 @@
     footer .row { display: flex; flex-wrap: wrap; gap: 16px 32px; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--outline-variant); }
     footer .links { display: flex; flex-wrap: wrap; gap: 4px 20px; }
     footer .links a:hover { color: var(--primary); }
+    footer .footer-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; text-align: right; }
+    footer .footer-right .links { justify-content: flex-end; }
+    @media (max-width: 600px) {
+      footer .row { align-items: flex-start; }
+      footer .footer-right { align-items: flex-start; text-align: left; }
+      footer .footer-right .links { justify-content: flex-start; }
+    }
 
     /* ===========================================================
        主题面板（动态取色）
@@ -687,8 +694,8 @@
           <strong style="color:var(--on-surface)">StarryFiles</strong> · © 2025 lingyicute · 以 <a href="https://github.com/lingyicute/StarryFiles/blob/main/LICENSE" target="_blank" rel="noopener" style="color:var(--primary)">GPL-3.0</a> 许可发布
           <div style="margin-top:4px">基于 <a href="https://github.com/zhanghai/MaterialFiles" target="_blank" rel="noopener" style="color:var(--primary)">MaterialFiles</a>（zhanghai）开发，致谢上游。</div>
         </div>
-        <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px; text-align:right;">
-          <div class="links" style="justify-content:flex-end;">
+        <div class="footer-right">
+          <div class="links">
             <a href="https://github.com/lingyicute/StarryFiles" target="_blank" rel="noopener">仓库</a>
             <a href="https://github.com/lingyicute/StarryFiles/issues" target="_blank" rel="noopener">反馈问题</a>
             <a href="https://github.com/lingyicute/StarryFiles/releases" target="_blank" rel="noopener">发行版</a>
