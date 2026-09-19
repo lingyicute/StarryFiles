@@ -28,6 +28,8 @@
   <a href="https://github.com/lingyicute/StarryFiles"><img src="https://img.shields.io/github/stars/lingyicute/StarryFiles?style=flat&color=yellow" alt="GitHub Stars"></a>
 </p>
 
+###  ‎
+
 ## 📖 Overview
 
 Most modern Android file managers fall into one of two extremes: closed-source tools loaded with advertisements and analytics, or clunky utilities plagued by inconsistent UI details and fragile `ls` command parsing.
