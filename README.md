@@ -26,8 +26,7 @@
   <a href="https://sf.92li.uk/"><img src="https://img.shields.io/badge/Ads%20%26%20Trackers-Zero-brightgreen" alt="No Ads No Tracking"></a>
   <a href="https://github.com/lingyicute/StarryFiles"><img src="https://img.shields.io/github/stars/lingyicute/StarryFiles?style=flat&color=yellow" alt="GitHub Stars"></a>
 </p>
-
-###  ‎
+<br>‎
 
 ## 📖 Overview
 
