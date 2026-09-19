@@ -1,7 +1,7 @@
-###  ‎
-
-###  ‎
-
+<br>
+<br>
+<br>
+<br>
 <p align="center">
   <img src="./app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" alt="StarryFiles Logo" width="96" height="96" onerror="this.style.display='none'"/>
 </p>
@@ -10,9 +10,8 @@
 
 <p align="center">A clean, lightweight, and secure file manager, crafted with pure Material Design and modern Linux-native engineering.</p>
 <p align="center">Made with ❤️ by <a href="https://github.com/lingyicute">lingyicute</a>.</p>
-
-###  ‎
-
+<br>
+<br>
 <p align="center">
   [🇺🇸 English] • <a href="README_zh-CN.md">🇨🇳 中文</a> •
   <a href="https://sf.92li.uk/">🌐 Official Website</a> •
