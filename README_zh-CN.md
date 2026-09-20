@@ -6,7 +6,7 @@
   <img src="./app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" alt="StarryFiles Logo" width="96" height="96" onerror="this.style.display='none'"/>
 </p>
 <h1 align="center">StarryFiles</h1>
-<h3 align="center">Just another file manager, simple yet powerful.</h3>‎‎
+<h3 align="center">Just another file manager, simple yet powerful.</h3>
 
 <p align="center">一款 Material Design 文件管理器。轻量、干净、安全，由 Linux libc 原生调用驱动，懂你心意。 </p>
 <p align="center">Made with ❤️ by <a href="https://github.com/lingyicute">lingyicute</a>.</p>

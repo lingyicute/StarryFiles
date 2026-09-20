@@ -6,7 +6,7 @@
   <img src="./app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" alt="StarryFiles Logo" width="96" height="96" onerror="this.style.display='none'"/>
 </p>
 <h1 align="center">StarryFiles</h1>
-<h3 align="center">Just another file manager, simple yet powerful.</h3>‎‎
+<h3 align="center">Just another file manager, simple yet powerful.</h3>
 
 <p align="center">A clean, lightweight, and secure file manager, crafted with pure Material Design and modern Linux-native engineering.</p>
 <p align="center">Made with ❤️ by <a href="https://github.com/lingyicute">lingyicute</a>.</p>
@@ -26,7 +26,7 @@
   <a href="https://sf.92li.uk/"><img src="https://img.shields.io/badge/Ads%20%26%20Trackers-Zero-brightgreen" alt="No Ads No Tracking"></a>
   <a href="https://github.com/lingyicute/StarryFiles"><img src="https://img.shields.io/github/stars/lingyicute/StarryFiles?style=flat&color=yellow" alt="GitHub Stars"></a>
 </p>
-<br>‎
+<br>
 
 ## 📖 Overview
 
