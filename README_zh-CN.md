@@ -1,7 +1,7 @@
-###  ‎
-
-###  ‎
-
+<br>
+<br>
+<br>
+<br>
 <p align="center">
   <img src="./app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" alt="StarryFiles Logo" width="96" height="96" onerror="this.style.display='none'"/>
 </p>
@@ -10,9 +10,8 @@
 
 <p align="center">一款 Material Design 文件管理器。轻量、干净、安全，由 Linux libc 原生调用驱动，懂你心意。 </p>
 <p align="center">Made with ❤️ by <a href="https://github.com/lingyicute">lingyicute</a>.</p>
-
-###  ‎
-
+<br>
+<br>
 <p align="center">
   <a href="README.md">🇺🇸 English</a> • [🇨🇳 中文] • 
   <a href="https://sf.92li.uk/">🌐 官方网站</a> •
@@ -27,8 +26,7 @@
   <a href="https://sf.92li.uk/"><img src="https://img.shields.io/badge/Ads%20%26%20Trackers-Zero-brightgreen" alt="No Ads No Tracking"></a>
   <a href="https://github.com/lingyicute/StarryFiles"><img src="https://img.shields.io/github/stars/lingyicute/StarryFiles?style=flat&color=yellow" alt="GitHub Stars"></a>
 </p>
-
----
+<br>
 
 ## 📖 项目简介
 
@@ -36,7 +34,7 @@
 
 **StarryFiles** 旨在打破这种现状。底层以 **Java NIO2 File API** 为骨架，通过 **JNI 直达 Linux libc 系统调用**；上层严格遵循 **Material Design / Material You** 设计规范，在提供桌面级管理能力（符号链接、权限、SELinux 上下文、NAS 协议支持）的同时，保持界面的克制、纯粹与优雅。
 
----
+<br>
 
 ## ✨ 核心特性
 
@@ -72,7 +70,7 @@
   - **拒绝解析 `ls`**：通过 C/C++ JNI 直连 Linux syscall，避免系统版本升级带来的解析失效。
   - 基于 Android 现代架构组件（**ViewModel + LiveData**）打造，优雅处理屏幕旋转、文件操作冲突与前后台状态切换。
 
----
+<br>
 
 ## 📱 应用预览
 
@@ -88,7 +86,7 @@
   <img src="https://raw.githubusercontent.com/lingyicute/StarryStoreStatics/main/0/repo/org.lyi.android.files/en-US/phoneScreenshots/06.jpg" width="31%" alt="截图 6"/>
 </p>
 
----
+<br>
 
 ## 🛠️ 为什么选择 StarryFiles？（底层设计解析）
 
@@ -101,7 +99,7 @@ StarryFiles 摒弃了传统文件管理器中[将 UI 状态与文件操作杂糅
 ### 3. 健壮的前端状态管理
 基于 **ViewModel** 与 **LiveData** 构建，天然支持横竖屏无缝旋转，并周全考虑了文件覆盖/跳过冲突、复制剪切中断重试以及后台服务状态同步。
 
----
+<br>
 
 ## 📥 下载与安装
 
@@ -111,7 +109,7 @@ StarryFiles 摒弃了传统文件管理器中[将 UI 状态与文件操作杂糅
 - **系统要求**：Android 5.0（Lollipop，API Level 21）及以上。
 - **Root 权限**：可选（仅在管理 `/system`、`/data` 等受保护系统分区时需要）。
 
----
+<br>
 
 ## 🔨 从源码构建
 
@@ -140,7 +138,7 @@ StarryFiles 摒弃了传统文件管理器中[将 UI 状态与文件操作杂糅
 
 编译生成的 APK 文件位于 `app/build/outputs/apk/` 目录下。
 
----
+<br>
 
 ## 💡 定制 ROM 预装与集成建议
 
@@ -150,7 +148,7 @@ StarryFiles 摒弃了传统文件管理器中[将 UI 状态与文件操作杂糅
 2. **允许用户卸载或停用**：请确保预装时未将应用锁定为不可卸载，允许不需要的用户自主移除。
 3. **避免签名冲突**：如果使用 ROM 私有签名密钥重新打包，建议更改 Application ID 包名，以避免用户未来通过官方渠道升级时发生签名冲突。
 
----
+<br>
 
 ## 🤗 参与贡献
 
@@ -159,7 +157,7 @@ StarryFiles 摒弃了传统文件管理器中[将 UI 状态与文件操作杂糅
 - **提交代码**：欢迎提交 Pull Request，提交前请确保代码格式整洁并通过构建测试。
 - **多语言翻译**：欢迎参与界面的本地化与多语言翻译。
 
----
+<br>
 
 ## 📄 许可
 
