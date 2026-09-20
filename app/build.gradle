@@ -9,9 +9,9 @@ apply plugin: 'kotlin-parcelize'
 
 android {
     namespace 'org.lyi.android.files'
-    buildToolsVersion = '35.0.0'
-    compileSdk 35
-    ndkVersion '27.2.12479018'
+    buildToolsVersion = '36.0.0'
+    compileSdk 36
+    ndkVersion '28.1.13356709'
     defaultConfig {
         applicationId 'org.lyi.android.files'
         minSdk 21
