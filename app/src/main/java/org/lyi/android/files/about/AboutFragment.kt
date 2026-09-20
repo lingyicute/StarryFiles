@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 lingyicute <li@92li.us.kg>
+ * Copyright (c) 2025 lingyicute <li@92li.uk>
  * All Rights Reserved.
  */
 
@@ -47,7 +47,7 @@ class AboutFragment : Fragment() {
 
     companion object {
         private val GITHUB_URI = Uri.parse("https://github.com/lingyicute/StarryFiles")
-        private val AUTHOR_RESUME_URI = Uri.parse("https://92li.us.kg")
+        private val AUTHOR_RESUME_URI = Uri.parse("https://92li.uk")
         private val AUTHOR_GITHUB_URI = Uri.parse("https://github.com/lingyicute")
     }
 }
