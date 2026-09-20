@@ -34,7 +34,7 @@ Most modern Android file managers fall into one of two extremes: closed-source t
 
 **StarryFiles** is engineered to bridge this gap. By decoupling the file system layer using **Java NIO.2 File APIs** and leveraging direct **Linux libc syscalls via JNI**, StarryFiles provides desktop-grade file management capabilities (symbolic links, Linux file permissions, SELinux contexts, and remote protocol support) wrapped in a fluid, polished Material You interface.
 
----
+<br>
 
 ## ✨ Features
 
@@ -70,7 +70,7 @@ Most modern Android file managers fall into one of two extremes: closed-source t
   - Powered by **JNI bindings directly to libc syscalls** rather than fragile `ls` stdout parsing or outdated `java.io.File` APIs.
   - Clean MVVM architecture built upon Android Jetpack **ViewModel** and **LiveData**.
 
----
+<br>
 
 ## 📱 Screenshots
 
@@ -86,7 +86,7 @@ Most modern Android file managers fall into one of two extremes: closed-source t
   <img src="https://raw.githubusercontent.com/lingyicute/StarryStoreStatics/main/0/repo/org.lyi.android.files/en-US/phoneScreenshots/06.jpg" width="31%" alt="Screenshot 6"/>
 </p>
 
----
+<br>
 
 ## 🛠️ Why StarryFiles? (Under the Hood)
 
@@ -99,7 +99,7 @@ Instead of relying on monolithic models where UI logic and file operations are t
 ### 3. Modern Reactive Frontend
 Built with **Android Architecture Components (ViewModel, LiveData)**, StarryFiles handles configuration changes (such as screen rotation) smoothly, guarantees robust background task management, and handles file conflict resolutions gracefully.
 
----
+<br>
 
 ## 📥 Download & Installation
 
@@ -109,7 +109,7 @@ Built with **Android Architecture Components (ViewModel, LiveData)**, StarryFile
 - **Android Version**: Android 5.0 (Lollipop, API Level 21) or above.
 - **Root Permission**: Optional (only required for `/system`, `/data`, and restricted partition modifications).
 
----
+<br>
 
 ## 🔨 Building from Source
 
@@ -138,7 +138,7 @@ Built with **Android Architecture Components (ViewModel, LiveData)**, StarryFile
 
 The compiled APKs will be located under `app/build/outputs/apk/`.
 
----
+<br>
 
 ## 💡 Notes for Custom ROM Maintainers
 
@@ -148,7 +148,7 @@ Thank you for choosing to bundle StarryFiles in your custom ROM distribution! To
 2. **Allow uninstallation / disabling**: Please ensure users can uninstall or disable the app if they prefer another file manager.
 3. **Signature integrity**: If you sign system apps with custom release keys, please rename the application package ID to avoid update signature mismatches with GitHub release packages.
 
----
+<br>
 
 ## 🤗 Contributing
 
@@ -157,7 +157,7 @@ Contributions are always welcome!
 - **Pull Requests**: Ensure code adheres to existing formatting guidelines and passes CI tests before submitting.
 - **Translations**: Help localize StarryFiles into more languages.
 
----
+<br>
 
 ## 📄 License
 
