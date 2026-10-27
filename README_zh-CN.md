@@ -159,21 +159,8 @@ StarryFiles 摒弃了传统文件管理器中[将 UI 状态与文件操作杂糅
 
 <br>
 
-## 📄 许可
+## 🗂️ 致谢与许可
 
-```text
-Copyright (C) 2025-2026 lingyicute <li@92li.uk>
+StarryFiles 是 MaterialFiles 的下游定制版本，由 lingyicute 维护。感谢 原作者 Hai Zhang 和所有上游贡献者。
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <https://www.gnu.org/licenses/>.
-```
+上游代码和下游修改均按照 [GPL-3.0](LICENSE) 授权。
